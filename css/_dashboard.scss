@@ -1,0 +1,22 @@
+.dashboard {
+  background: var(--clr-dark);
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.nav-right {
+  --gap: 0;
+  --flow-space: 2.25rem;
+  align-items: center;
+}
+
+.nav-right__links {
+  --gap: 0;
+  --flow-space: 2.25rem;
+  margin: 0;
+  list-style: none;
+}

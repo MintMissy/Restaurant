@@ -16,11 +16,10 @@
 
 
   // Font sizes
-  --fs-800: 3.5rem;
-  --fs-700: 1.5rem;
-  --fs-600: 1rem;
-  --fs-500: 1rem;
-  --fs-400: 0.9375rem;
+  --fs-700: 2.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
@@ -67,12 +66,12 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  min-height: 100vh;
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
-  color: var(--clr-white);
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  color: var(--clr-white);
+  text-rendering: optimizeSpeed;
 }
 
 /* A elements that don't have a class get default styles */
@@ -83,8 +82,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -93,6 +92,11 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -104,10 +108,10 @@ select {
   *,
   *::before,
   *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
@@ -119,16 +123,12 @@ select {
 // Display classes
 .flex {
   display: flex;
-  gap: var(--gap, 1rem)
-}
-
-.vertical-center {
-  align-items: center;
+  gap: var(--gap, 1rem);
 }
 
 .grid {
   display: flex;
-  gap: var(--gap, 1rem)
+  gap: var(--gap, 1rem);
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -137,6 +137,10 @@ select {
 
 .flow--space--small {
   --flow-space: .75rem;
+}
+
+.flow--horizontal>*:where(:not(:first-child)) {
+  margin-left: var(--flow-space, 1rem);
 }
 
 .container {
@@ -250,6 +254,24 @@ select {
 }
 
 /* ======================== */
+/*       Google Icons       */
+/* ======================== */
+
+.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
+}
+
+h1>.material-icons,
+h2>.material-icons {
+  margin-right: 0.25em;
+}
+
+p>.material-icons {
+  margin-right: 1em;
+}
+
+/* ======================== */
 /*        Components        */
 /* ======================== */
 
@@ -257,8 +279,15 @@ select {
 
 .primary-navigation {}
 
-.btn {}
-
-.icon {}
+.btn {
+  border: none;
+  border-radius: 1em;
+  padding: 0.35em 1em;
+}
 
 .card {}
+
+/* ======================== */
+/*         Imports          */
+/* ======================== */
+@import "_dashboard.scss";

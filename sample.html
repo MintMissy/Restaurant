@@ -4,28 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dashboard - Restaurant</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body class="dashboard">
+    <!-- Navigation -->
     <header class="primary-header">
-      <nav class="nav flex">
-        <div class="nav__current-page">Dashboard</div>
-        <ul class="nav__list flex">
-          <li class="nav-item capitalize"><a href="">home</a></li>
-          <li class="nav-item capitalize"><a href="">storage</a></li>
-          <li class="nav-item capitalize"><a href="">orders</a></li>
-        </ul>
-        <button class="log-out capitalize">log out</button>
+      <nav class="nav flex fs-700 text-primary">
+        <div class="nav-current-page">Dashboard</div>
+        <div class="nav-right flex flow--horizontal">
+          <ul class="nav-right__links flex flow--horizontal">
+            <li class="nav-item capitalize"><a href="">home</a></li>
+            <li class="nav-item capitalize"><a href="">storage</a></li>
+            <li class="nav-item capitalize"><a href="">orders</a></li>
+          </ul>
+          <a href="">
+            <button class="log-out btn bg-primary fs-500 capitalize">
+              log out
+            </button>
+          </a>
+        </div>
       </nav>
     </header>
+
     <main>
       <div class="grid grid-container--dashboard">
-        <div class="card card--review"></div>
+        <!-- Review Card -->
+        <div class="card card--review">
+          <h1>
+            <i class="material-icons">donut_large</i>
+            Monthly Review
+          </h1>
+          <div class="review-content flex">
+            <div class="container">
+              <h2>
+                <i class="material-icons">explore</i>
+                Overview
+              </h2>
+              <p>Date: <span>15.09-30.09 </span></p>
+              <p>Total orders: <span>26</span></p>
+              <p>Food of Month: <span>Chips</span></p>
+            </div>
+            <div class="container">
+              <h2>
+                <span class="material-icons">monetization_on</span>
+                Income
+              </h2>
+              <p>Pre-tax: <span>$14.00</span></p>
+              <p>Net: <span>$14.00</span></p>
+            </div>
+            <div class="container">
+              <h2>
+                <span class="material-icons">trending_up</span>
+                Revenue
+              </h2>
+              <p class="week-review__content-progress">Last week: $1400</p>
+              <p class="week-review__content-progress">
+                This week income: $1600
+              </p>
+              <p class="week-review__content-progress">Difference: +25%</p>
+            </div>
+          </div>
+        </div>
+        <!-- Orders Card -->
         <div class="card card--orders"></div>
+        <!-- Statistics Card -->
         <div class="card card--statistics"></div>
+        <!-- Storage Card -->
         <div class="card card--storage"></div>
+        <!-- Marketing Card -->
         <div class="card card--marketing"></div>
+        <!-- Employees Card -->
         <div class="card card--employees"></div>
       </div>
     </main>
