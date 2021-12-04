@@ -1,86 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Restaurant</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
-  <body class="dashboard">
-    <!-- Navigation -->
-    <header class="primary-header">
-      <nav class="nav flex fs-700 text-primary">
-        <div class="nav-current-page">Dashboard</div>
-        <div class="nav-right flex flow--horizontal">
-          <ul class="nav-right__links flex flow--horizontal">
-            <li class="nav-item capitalize"><a href="">home</a></li>
-            <li class="nav-item capitalize"><a href="">storage</a></li>
-            <li class="nav-item capitalize"><a href="">orders</a></li>
-          </ul>
-          <a href="">
-            <button class="log-out btn bg-primary fs-500 capitalize">
-              log out
-            </button>
-          </a>
-        </div>
-      </nav>
-    </header>
 
-    <main>
-      <div class="grid grid-container--dashboard">
-        <!-- Review Card -->
-        <div class="card card--review">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Restaurant</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="dashboard">
+  <!-- Navigation -->
+  <header class="primary-header">
+    <nav class="nav flex fs-700 text-white">
+      <div class="nav-current-page">Dashboard</div>
+      <div class="nav-right flex flow--horizontal letter-spacing-2">
+        <ul class="nav-right__links flex flow--horizontal fs-600">
+          <li class="nav-item capitalize"><a href="">home</a></li>
+          <li class="nav-item capitalize"><a href="">storage</a></li>
+          <li class="nav-item capitalize"><a href="">orders</a></li>
+        </ul>
+        <a href="" class="log-out btn bg-primary text-dark fs-500 fw-600 capitalize">
+          log out
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid grid-container--dashboard">
+      <!-- Review Card -->
+      <div class="card card--review flow">
+        <!-- Monthly Review -->
+        <div>
           <h1>
-            <i class="material-icons">donut_large</i>
+            <i class="material-icons text-primary">donut_large</i>
             Monthly Review
           </h1>
-          <div class="review-content flex">
-            <div class="container">
-              <h2>
+          <div class="card-content flex flow--horizontal">
+            <div class="text-primary--tint">
+              <h2 class="text-white">
                 <i class="material-icons">explore</i>
                 Overview
               </h2>
-              <p>Date: <span>15.09-30.09 </span></p>
-              <p>Total orders: <span>26</span></p>
-              <p>Food of Month: <span>Chips</span></p>
+              <p>
+                Date Range:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">15.09-30.09
+                </span>
+              </p>
+              <p>
+                Total orders:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">26</span>
+              </p>
+              <p>
+                Food of the Month:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">Chips</span>
+              </p>
             </div>
-            <div class="container">
-              <h2>
+            <div class="text-primary--tint">
+              <h2 class="text-white">
                 <span class="material-icons">monetization_on</span>
                 Income
               </h2>
-              <p>Pre-tax: <span>$14.00</span></p>
-              <p>Net: <span>$14.00</span></p>
+              <p>
+                Gross:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+              </p>
+              <p>
+                Net:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+              </p>
             </div>
-            <div class="container">
-              <h2>
+            <div class="text-primary--tint">
+              <h2 class="text-white">
                 <span class="material-icons">trending_up</span>
                 Revenue
               </h2>
-              <p class="week-review__content-progress">Last week: $1400</p>
               <p class="week-review__content-progress">
-                This week income: $1600
+                Last week:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$1400</span>
               </p>
-              <p class="week-review__content-progress">Difference: +25%</p>
+              <p class="week-review__content-progress">
+                This week:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$1600</span>
+              </p>
+              <p class="week-review__content-progress">
+                Proportion:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">125%</span>
+              </p>
             </div>
           </div>
         </div>
-        <!-- Orders Card -->
-        <div class="card card--orders"></div>
-        <!-- Statistics Card -->
-        <div class="card card--statistics"></div>
-        <!-- Storage Card -->
-        <div class="card card--storage"></div>
-        <!-- Marketing Card -->
-        <div class="card card--marketing"></div>
-        <!-- Employees Card -->
-        <div class="card card--employees"></div>
+        <!-- Weekly Review -->
+        <div>
+          <h1>
+            <i class="material-icons text-primary">donut_large</i>
+            Weekly Review
+          </h1>
+          <div class="card-content flex flow--horizontal">
+            <div class="text-primary--tint">
+              <h2 class="text-white">
+                <i class="material-icons">explore</i>
+                Overview
+              </h2>
+              <p>
+                Date Range:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">15.09-30.09
+                </span>
+              </p>
+              <p>
+                Total orders:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">26</span>
+              </p>
+              <p>
+                Food of the Week:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">Chips</span>
+              </p>
+            </div>
+            <div class="text-primary--tint">
+              <h2 class="text-white">
+                <span class="material-icons">monetization_on</span>
+                Income
+              </h2>
+              <p>
+                Gross:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+              </p>
+              <p>
+                Net:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+              </p>
+            </div>
+            <div class="text-primary--tint">
+              <h2 class="text-white">
+                <span class="material-icons">trending_up</span>
+                Revenue
+              </h2>
+              <p class="week-review__content-progress">
+                Last week:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$1400</span>
+              </p>
+              <p class="week-review__content-progress">
+                This week:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">$1600</span>
+              </p>
+              <p class="week-review__content-progress">
+                Proportion:
+                <span class="card-content-value text-white--shade ff-roboto fs-300">+25%</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-  </body>
+      <!-- Orders Card -->
+      <div class="card card--orders">
+        <h1>
+          <i class="material-icons text-primary">donut_large</i>
+          Orders
+        </h1>
+        <div class="card-content card-content--orders flex-column">
+          <!-- Pending -->
+          <a href="">
+            <div class="highlighted-row flex fs-500">
+              <p>
+                <i class="material-icons text-primary--tint">pending_actions</i>
+                Pending: <span class="card-content-value text-white--shade ff-roboto">4</span>
+              </p>
+              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
+            </div>
+          </a>
+          <!-- Shipped -->
+          <a href="">
+            <div class="highlighted-row flex fs-500">
+              <p>
+                <i class="material-icons text-primary--tint">directions_car</i>
+                Shipped: <span class="card-content-value text-white--shade ff-roboto">5</span>
+              </p>
+              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
+            </div>
+          </a>
+          <!-- Realised -->
+          <a href="">
+            <div class="highlighted-row flex fs-500">
+              <p>
+                <i class="material-icons text-primary--tint">task_alt</i>
+                Realised: <span class="card-content-value text-white--shade ff-roboto">2</span>
+              </p>
+              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+      <!-- Statistics Card
+      <div class="card card--statistics"></div>
+      <!-- Storage Card -->
+      <!-- <div class="card card--storage"></div> -->
+      <!-- Marketing Card -->
+      <!-- <div class="card card--marketing"></div> -->
+      <!-- Employees Card -->
+      <!-- <div class="card card--employees"></div> -->
+    </div>
+  </main>
+</body>
+
 </html>

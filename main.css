@@ -1,30 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:ital@1&display=swap");
 /* ======================== */
 /*      Variables           */
 /* ======================== */
-
 :root {
-  // Colors
   --clr-primary: hsl(45, 94%, 56%);
   --clr-primary--tint: hsl(45, 69%, 71%);
-  --clr-dark: hsl(180, 20%, 2%);
-  --clr-dark-tint: hsl(200, 25%, 5%);
-  --clr-gray: hsl(200, 23%, 10%);
+  --clr-dark: hsl(210, 25%, 2%);
+  --clr-dark-tint: hsl(hsl210, 23%, 5%);
   --clr-white: hsl(0, 0%, 100%);
-  --clr-white--shade: hsl(0, 0%, 85%);
+  --clr-white--shade: hsl(0, 0%, 92%);
   --clr-error: hsl(4, 100%, 48%);
   --clr-warning: hsl(41, 100%, 50%);
-
-
-  // Font sizes
   --fs-700: 2.5rem;
   --fs-600: 2rem;
-  --fs-500: 1.3rem;
+  --fs-500: 1.75rem;
   --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
-
-  // Font-families
   --ff-roboto: 'Roboto', sans-serif;
   --ff-sans: 'Source Sans Pro', sans-serif;
 }
@@ -32,12 +24,12 @@
 /* ======================== */
 /*      CSS Reset           */
 /* ======================== */
-
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -73,7 +65,6 @@ body {
   line-height: 1.5;
   color: var(--clr-white);
   text-rendering: optimizeSpeed;
-  background: var(--clr-dark);
 }
 
 /* A elements that don't have a class get default styles */
@@ -106,40 +97,37 @@ a {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
   }
 }
-
 
 /* ======================== */
 /*    Utility classes       */
 /* ======================== */
-
-// Display classes
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: var(--gap, 1rem);
-}
-
-.flex-column {
-  display: flex;
-  gap: var(--gap, 1rem);
-  flex-direction: column;
 }
 
 .grid {
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: var(--gap, 1rem);
 }
 
-.flow>*:where(:not(:first-child)) {
+.flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
@@ -147,7 +135,7 @@ a {
   --flow-space: .75rem;
 }
 
-.flow--horizontal>*:where(:not(:first-child)) {
+.flow--horizontal > *:where(:not(:first-child)) {
   margin-left: var(--flow-space, 1rem);
 }
 
@@ -157,7 +145,6 @@ a {
   margin-inline: auto;
 }
 
-// Color classes
 .bg-primary {
   background: var(--clr-primary);
 }
@@ -171,11 +158,11 @@ a {
 }
 
 .text-white {
-  color: var(--clr-white);
+  background: var(--clr-white);
 }
 
 .text-white--shade {
-  color: var(--clr-white--shade);
+  background: var(--clr-white), 70%;
 }
 
 .text-primary {
@@ -183,7 +170,7 @@ a {
 }
 
 .text-primary--tint {
-  color: var(--clr-primary--tint);
+  color: var(--clr-primary-tint);
 }
 
 .text-dark {
@@ -198,7 +185,6 @@ a {
   color: var(--clr-error);
 }
 
-// Typography
 .ff-roboto {
   font-family: var(--ff-roboto);
 }
@@ -268,36 +254,52 @@ a {
 /* ======================== */
 /*       Google Icons       */
 /* ======================== */
-
 .material-icons {
   vertical-align: middle;
   font-size: inherit;
 }
 
-h1>.material-icons,
-h2>.material-icons {
+h1 > .material-icons,
+h2 > .material-icons {
   margin-right: 0.25em;
 }
 
-p>.material-icons {
-  margin-right: 0.5em;
+p > .material-icons {
+  margin-right: 1em;
 }
 
 /* ======================== */
 /*        Components        */
 /* ======================== */
+.btn {
+  border: none;
+  border-radius: 1em;
+  padding: 0.25em 1em;
+}
 
-// Navbar
+/* ======================== */
+/*         Imports          */
+/* ======================== */
+.dashboard {
+  background: var(--clr-dark);
+}
+
 .nav {
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.5em 1em;
 }
 
 .nav-right {
   --gap: 0;
   --flow-space: 2.25rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav-right__links {
@@ -307,57 +309,8 @@ p>.material-icons {
   list-style: none;
 }
 
-// Button
-.btn {
-  display: block;
-  border: none;
-  border-radius: 1em;
-  padding: 0.25em 1em;
+.grid-container--dashboard {
+  padding: 0.5em 1em;
+  background-color: var();
 }
-
-// Card
-.card {
-  background: var(--clr-dark-tint);
-  padding: 1rem 2rem 1.5rem;
-  border-radius: 0.5rem;
-  --flow-space: 2rem;
-}
-
-.card-content {
-  margin-top: 0.5rem;
-}
-
-.card-content-value {
-  margin-left: 0.25em;
-  font-weight: 400;
-}
-
-.card-content--orders {
-  --gap: 0.25em;
-}
-
-// Highlighted Row
-.highlighted-row {
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.1em 0.3em;
-  border-radius: 0.25em;
-}
-
-.highlighted-row__icon {
-  display: none !important;
-}
-
-.highlighted-row:hover {
-  background: var(--clr-gray);
-
-}
-
-.highlighted-row:hover .highlighted-row__icon {
-  display: block !important;
-}
-
-/* ======================== */
-/*         Imports          */
-/* ======================== */
-@import "_dashboard.scss";
+/*# sourceMappingURL=main.css.map */

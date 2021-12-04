@@ -179,26 +179,6 @@ body {
     text-align: center;
 }
 
-.highlighted-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25em 0.5em 0.25em 0.25em;
-    border-radius: 0.25em;
-}
-
-.highlighted-row__icon {
-    display: none !important;
-}
-
-.highlighted-row:hover {
-    background: rgba(211, 211, 211, 0.6);
-}
-
-.highlighted-row:hover .highlighted-row__icon {
-    display: block !important;
-}
-
 .warning {
     color: rgb(255, 174, 0) !important;
 }

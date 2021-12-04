@@ -1,22 +1,18 @@
-.dashboard {
-  background: var(--clr-dark);
+.grid-container--dashboard {
+  --gap: 2rem;
+  padding: 0.5em 2em;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "review review review review orders orders"
+    "review review review review statistics statistics "
+    "storage storage marketing marketing employees employees"
+  ;
 }
 
-.nav {
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 1em;
+.card--review {
+  grid-area: review;
 }
 
-.nav-right {
-  --gap: 0;
-  --flow-space: 2.25rem;
-  align-items: center;
-}
-
-.nav-right__links {
-  --gap: 0;
-  --flow-space: 2.25rem;
-  margin: 0;
-  list-style: none;
+.card--orders {
+  grid-area: orders;
 }
