@@ -12,8 +12,8 @@
   --clr-gray: hsl(200, 23%, 10%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-white--shade: hsl(0, 0%, 85%);
-  --clr-error: hsl(4, 100%, 48%);
-  --clr-warning: hsl(41, 100%, 50%);
+  --clr-error: hsl(4, 100%, 61%);
+  --clr-warning: hsl(41, 100%, 62%);
 
 
   // Font sizes
@@ -117,6 +117,10 @@ a {
   }
 }
 
+.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
+}
 
 /* ======================== */
 /*    Utility classes       */
@@ -269,11 +273,6 @@ a {
 /*       Google Icons       */
 /* ======================== */
 
-.material-icons {
-  vertical-align: middle;
-  font-size: inherit;
-}
-
 h1>.material-icons,
 h2>.material-icons {
   margin-right: 0.25em;
@@ -311,8 +310,8 @@ p>.material-icons {
 .btn {
   display: block;
   border: none;
-  border-radius: 1em;
-  padding: 0.25em 1em;
+  border-radius: 0.5em;
+  padding: 0.5em;
 }
 
 // Card

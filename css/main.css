@@ -10,8 +10,8 @@
   --clr-gray: hsl(200, 23%, 10%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-white--shade: hsl(0, 0%, 85%);
-  --clr-error: hsl(4, 100%, 48%);
-  --clr-warning: hsl(41, 100%, 50%);
+  --clr-error: hsl(4, 100%, 61%);
+  --clr-warning: hsl(41, 100%, 62%);
   --fs-700: 2.5rem;
   --fs-600: 2rem;
   --fs-500: 1.3rem;
@@ -110,6 +110,11 @@ a {
     -webkit-animation-iteration-count: 1 !important;
             animation-iteration-count: 1 !important;
   }
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
 }
 
 /* ======================== */
@@ -266,11 +271,6 @@ a {
 /* ======================== */
 /*       Google Icons       */
 /* ======================== */
-.material-icons {
-  vertical-align: middle;
-  font-size: inherit;
-}
-
 h1 > .material-icons,
 h2 > .material-icons {
   margin-right: 0.25em;
@@ -311,8 +311,8 @@ p > .material-icons {
 .btn {
   display: block;
   border: none;
-  border-radius: 1em;
-  padding: 0.25em 1em;
+  border-radius: 0.5em;
+  padding: 0.5em;
 }
 
 .card {
@@ -366,7 +366,7 @@ p > .material-icons {
   padding: 0.5em 2em;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-      grid-template-areas: "review review review review orders orders" "review review review review statistics statistics " "storage storage marketing marketing employees employees";
+      grid-template-areas: "review review review review orders orders" "review review review review storage storage" "statistics statistics marketing marketing employees employees";
 }
 
 .card--review {
@@ -382,5 +382,12 @@ p > .material-icons {
   -ms-grid-column: 5;
   -ms-grid-column-span: 2;
   grid-area: orders;
+}
+
+.card--storage {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: storage;
 }
 /*# sourceMappingURL=main.css.map */

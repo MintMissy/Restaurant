@@ -4,8 +4,8 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
     "review review review review orders orders"
-    "review review review review statistics statistics "
-    "storage storage marketing marketing employees employees"
+    "review review review review storage storage"
+    "statistics statistics marketing marketing employees employees"
   ;
 }
 
@@ -15,4 +15,8 @@
 
 .card--orders {
   grid-area: orders;
+}
+
+.card--storage {
+  grid-area: storage;
 }
