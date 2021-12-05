@@ -7,6 +7,16 @@
   box-shadow: 0 0 30px 50px #{'hsl(var(--clr-dark), .8)'};
 }
 
+@media screen and (max-width: 680px) {
+  .login-form {
+    background: #{'hsl(var(--clr-dark), .8)'};
+    width: 100vw;
+    padding: 18vh 2em;
+    box-shadow: none;
+  }
+}
+
+// Form content
 .login-form-title {
   text-align: center;
 }
