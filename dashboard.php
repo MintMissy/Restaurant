@@ -174,34 +174,28 @@ $conn = OpenConnection();
         </h1>
         <div class="card-content card-content--orders flex-column">
           <!-- Pending -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p>
-                <i class="material-icons text-primary--tint">pending_actions</i>
-                Pending: <span class="card-content-value text-white--shade ff-roboto">4</span>
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" class="highlighted-row flex fs-500">
+            <p>
+              <i class="material-icons text-primary--tint">pending_actions</i>
+              Pending: <span class="card-content-value text-white--shade ff-roboto">4</span>
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Shipped -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p>
-                <i class="material-icons text-primary--tint">directions_car</i>
-                Shipped: <span class="card-content-value text-white--shade ff-roboto">5</span>
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" class="highlighted-row flex fs-500">
+            <p>
+              <i class="material-icons text-primary--tint">directions_car</i>
+              Shipped: <span class="card-content-value text-white--shade ff-roboto">5</span>
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Realized -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p>
-                <i class="material-icons text-primary--tint">task_alt</i>
-                Realized: <span class="card-content-value text-white--shade ff-roboto">2</span>
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" class="highlighted-row flex fs-500">
+            <p>
+              <i class="material-icons text-primary--tint">task_alt</i>
+              Realized: <span class="card-content-value text-white--shade ff-roboto">2</span>
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
         </div>
       </div>
@@ -213,34 +207,28 @@ $conn = OpenConnection();
         </h1>
         <div class="card-content card-content--orders flex-column">
           <!-- View Products -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p>
-                <i class="material-icons text-primary--tint">archive</i>
-                View Products
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" class="highlighted-row flex fs-500">
+            <p>
+              <i class="material-icons text-primary--tint">archive</i>
+              View Products
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Warning Products -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p class="text-warning">
-                <i class="material-icons">report_problem</i>
-                5 Ingredients Nearly Depleted
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" class="highlighted-row flex fs-500">
+            <p class="text-warning">
+              <i class="material-icons">report_problem</i>
+              5 Ingredients Nearly Depleted
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Error Products -->
-          <a href="">
-            <div class="highlighted-row flex fs-500">
-              <p class="text-error">
-                <i class="material-icons">error</i>
-                2 Ingredients Missing
-              </p>
-              <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
-            </div>
+          <a href="" div class="highlighted-row flex fs-500">
+            <p class="text-error">
+              <i class="material-icons">error</i>
+              2 Ingredients Missing
+            </p>
+            <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
         </div>
       </div>
