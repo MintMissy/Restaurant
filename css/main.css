@@ -405,7 +405,6 @@ p > .material-icons {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: statistics;
-  --flow-space: 1rem;
 }
 
 .card--marketing {
@@ -424,5 +423,11 @@ p > .material-icons {
 
 .card-content--review {
   --flow-space: clamp(2rem, 6vw, 10rem);
+}
+
+.card--statistics,
+.card--marketing,
+.card--employees {
+  --flow-space: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
