@@ -309,7 +309,7 @@ p > .material-icons {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5rem 2.25rem;
-  background: hsl(var(--clr-dark--tint), .96);
+  background: hsl(var(--clr-dark--tint), .98);
   padding: 1rem 2rem;
   -webkit-box-shadow: 0 0 12px 4px hsl(var(--clr-dark), .8);
           box-shadow: 0 0 12px 4px hsl(var(--clr-dark), .8);
@@ -384,7 +384,7 @@ p > .material-icons {
 .card {
   --flow-space: 2rem;
   border-radius: 0.5rem;
-  background: hsl(var(--clr-dark--tint), .96);
+  background: hsl(var(--clr-dark--tint), .98);
   padding: 1rem 2rem 1.5rem;
   -webkit-box-shadow: 0 0 12px 4px hsl(var(--clr-dark), .8);
           box-shadow: 0 0 12px 4px hsl(var(--clr-dark), .8);

@@ -1,3 +1,16 @@
+<?php
+include './php/DatabaseConnector.php';
+
+$conn = OpenConnection();
+
+// $sql = 'SELECT * FROM storage';
+// $result = mysqli_query($conn, $sql);
+// while ($row = mysqli_fetch_array($result)) {
+//   echo $row['item_name'] . '<br/>';
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +34,7 @@
           <li class="nav-item"><a href="">storage</a></li>
           <li class="nav-item"><a href="">orders</a></li>
         </ul>
-        <a href="" class="btn text-dark ff-roboto capitalize letter-spacing-1 fs-500">
+        <a href="index.php" class="btn text-dark ff-roboto capitalize letter-spacing-1 fs-500">
           <span style="margin-top: 3px;">Sign Out</span>
         </a>
       </div>
@@ -317,3 +330,5 @@
 </body>
 
 </html>
+
+<?php CloseConnection($conn); ?>
