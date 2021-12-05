@@ -2,44 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login into database</title>
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Restaurant</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
+<?php
+// $admin_login = 'login';
+// $admin_password = 'zaq1';
+
+// if (isset($_POST['login']) && isset($_POST['password'])) {
+//     $login = $_POST['login'];
+//     $password = $_POST['password'];
+
+//     if ($login == $admin_login && $password == $admin_password) {
+//         // echo ("logged in");
+//     }
+// } else {
+//     // echo ("Fill the form");
+// }
+?>
+
 <body>
-
-    <?php
-    $admin_login = 'login';
-    $admin_password = 'zaq1';
-
-    if (isset($_POST['login']) && isset($_POST['password'])) {
-        $login = $_POST['login'];
-        $password = $_POST['password'];
-
-        if ($login == $admin_login && $password == $admin_password) {
-            // echo ("logged in");
-        }
-    } else {
-        // echo ("Fill the form");
-    }
-    ?>
-
-    <form action="dashboard.php" method="POST" class="login-form">
-        <h1>Login into Restaurant</h1>
-        <div class="input-container">
-            <input type="text" name="login" required placeholder="Username" />
-        </div>
-
-        <div class="input-container">
-            <input type="password" name="password" required placeholder="Password" />
-        </div>
-
-        <input type="submit" value="login" class="btn--submit">
-    </form>
-
+  <form action="dashboard.php" method="POST" class="login-form flex-column flow">
+    <h1 class="login-form-title letter-spacing-1 fs-800">Welcome!</h1>
+    <div class="login-form__inputs flow">
+      <input type="text" name="login" class="login-form-input text-white--shade fs-500" required placeholder="Username" />
+      <input type="password" name="password" class="login-form-input text-white--shade fs-500" required placeholder="Password" />
+    </div>
+    <input type="submit" value="login" class="btn btn--submit ff-roboto uppercase letter-spacing-2">
+  </form>
 </body>
 
 </html>
