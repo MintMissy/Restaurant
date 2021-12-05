@@ -143,6 +143,11 @@ a {
   gap: var(--gap, 1rem);
 }
 
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
 .flow>*:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -290,7 +295,7 @@ p>.material-icons {
 .nav {
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.5rem 2.25rem;
 }
 
 .nav-right {
@@ -310,8 +315,8 @@ p>.material-icons {
 .btn {
   display: block;
   border: none;
-  border-radius: 0.5em;
-  padding: 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
 }
 
 // Card

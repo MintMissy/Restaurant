@@ -144,6 +144,15 @@ a {
   gap: var(--gap, 1rem);
 }
 
+.vertical-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -290,7 +299,7 @@ p > .material-icons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.5rem 2.25rem;
 }
 
 .nav-right {
@@ -311,8 +320,8 @@ p > .material-icons {
 .btn {
   display: block;
   border: none;
-  border-radius: 0.5em;
-  padding: 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
 }
 
 .card {
@@ -363,7 +372,7 @@ p > .material-icons {
 /* ======================== */
 .grid-container--dashboard {
   --gap: 2rem;
-  padding: 0.5em 2em;
+  padding: 0.5rem 2rem;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas: "review review review review orders orders" "review review review review storage storage" "statistics statistics marketing marketing employees employees";
@@ -389,5 +398,31 @@ p > .material-icons {
   -ms-grid-column: 5;
   -ms-grid-column-span: 2;
   grid-area: storage;
+}
+
+.card--statistics {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: statistics;
+  --flow-space: 1rem;
+}
+
+.card--marketing {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: marketing;
+}
+
+.card--employees {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: employees;
+}
+
+.card-content--review {
+  --flow-space: clamp(2rem, 6vw, 10rem);
 }
 /*# sourceMappingURL=main.css.map */

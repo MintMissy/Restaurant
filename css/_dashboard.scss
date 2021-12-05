@@ -1,6 +1,6 @@
 .grid-container--dashboard {
   --gap: 2rem;
-  padding: 0.5em 2em;
+  padding: 0.5rem 2rem;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
     "review review review review orders orders"
@@ -19,4 +19,21 @@
 
 .card--storage {
   grid-area: storage;
+}
+
+.card--statistics {
+  grid-area: statistics;
+  --flow-space: 1rem;
+}
+
+.card--marketing {
+  grid-area: marketing;
+}
+
+.card--employees {
+  grid-area: employees;
+}
+
+.card-content--review {
+  --flow-space: clamp(2rem, 6vw, 10rem);
 }
