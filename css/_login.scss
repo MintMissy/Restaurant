@@ -1,0 +1,51 @@
+.login {
+  background-image: url(../img/bg-login.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  background: #{'hsl(var(--clr-dark-copy), .8)'};
+  height: 100vh;
+  width: 23em;
+  padding: 18vh 3em;
+  justify-items: center;
+  box-shadow: -3px 0px 30px 50px #{'hsl(var(--clr-dark-copy), .8)'};
+}
+
+.login-form-title {
+  text-align: center;
+}
+
+.login-form__inputs {
+  --flow-space: 2rem;
+}
+
+.login-form-input {
+  position: relative;
+  border: none;
+  border-bottom: 1px solid var(--clr-white--shade);
+  background: rgba(1, 1, 1, 0.0);
+  width: 100%;
+  padding: .25em .5em;
+}
+
+.login-form-input:focus {
+  outline: none;
+}
+
+// Make browser autocomplete transparent
+.login-form-input:-webkit-autofill,
+.login-form-input:-webkit-autofill:hover,
+.login-form-input:-webkit-autofill:focus,
+.login-form-input:-webkit-autofill:active {
+  transition: "color 9999s ease-out, background-color 9999s ease-out";
+  transition-delay: 9999s;
+}
+
+.login-form>.btn--submit {
+  --flow-space: 3rem;
+  width: 75%;
+  margin-inline: auto;
+}

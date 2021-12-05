@@ -12,6 +12,8 @@
   --clr-white--shade: hsl(0, 0%, 85%);
   --clr-error: hsl(4, 100%, 61%);
   --clr-warning: hsl(41, 100%, 62%);
+  --clr-dark-copy: 180, 20%, 2%;
+  --fs-800: 3rem;
   --fs-700: 2.5rem;
   --fs-600: 2rem;
   --fs-500: 1.3rem;
@@ -60,13 +62,13 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  background: var(--clr-dark);
   min-height: 100vh;
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   line-height: 1.5;
   color: var(--clr-white);
   text-rendering: optimizeSpeed;
-  background: var(--clr-dark);
 }
 
 /* A elements that don't have a class get default styles */
@@ -131,11 +133,11 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: var(--gap, 1rem);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: var(--gap, 1rem);
 }
 
 .grid {
@@ -322,13 +324,22 @@ p > .material-icons {
   border: none;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  opacity: 0.7;
 }
 
 .card {
+  --flow-space: 2rem;
+  border-radius: 0.5rem;
   background: var(--clr-dark-tint);
   padding: 1rem 2rem 1.5rem;
-  border-radius: 0.5rem;
-  --flow-space: 2rem;
 }
 
 .card-content {
@@ -351,8 +362,8 @@ p > .material-icons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.1em 0.3em;
   border-radius: 0.25em;
+  padding: 0.1em 0.3em;
 }
 
 .highlighted-row__icon {
@@ -372,10 +383,10 @@ p > .material-icons {
 /* ======================== */
 .grid-container--dashboard {
   --gap: 2rem;
-  padding: 0.5rem 2rem;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas: "review review review review orders orders" "review review review review storage storage" "statistics statistics marketing marketing employees employees";
+  padding: 0.5rem 2rem;
 }
 
 .card--review {
@@ -429,5 +440,59 @@ p > .material-icons {
 .card--marketing,
 .card--employees {
   --flow-space: 1rem;
+}
+
+.login {
+  background-image: url(../img/bg-login.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  background: hsl(var(--clr-dark-copy), .8);
+  height: 100vh;
+  width: 23em;
+  padding: 18vh 3em;
+  justify-items: center;
+  -webkit-box-shadow: -3px 0px 30px 50px hsl(var(--clr-dark-copy), .8);
+          box-shadow: -3px 0px 30px 50px hsl(var(--clr-dark-copy), .8);
+}
+
+.login-form-title {
+  text-align: center;
+}
+
+.login-form__inputs {
+  --flow-space: 2rem;
+}
+
+.login-form-input {
+  position: relative;
+  border: none;
+  border-bottom: 1px solid var(--clr-white--shade);
+  background: rgba(1, 1, 1, 0);
+  width: 100%;
+  padding: .25em .5em;
+}
+
+.login-form-input:focus {
+  outline: none;
+}
+
+.login-form-input:-webkit-autofill,
+.login-form-input:-webkit-autofill:hover,
+.login-form-input:-webkit-autofill:focus,
+.login-form-input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+          transition-delay: 9999s;
+}
+
+.login-form > .btn--submit {
+  --flow-space: 3rem;
+  width: 75%;
+  margin-inline: auto;
 }
 /*# sourceMappingURL=main.css.map */

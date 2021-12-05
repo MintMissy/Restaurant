@@ -1,13 +1,13 @@
 // Grid positioning
 .grid-container--dashboard {
   --gap: 2rem;
-  padding: 0.5rem 2rem;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
     "review review review review orders orders"
     "review review review review storage storage"
     "statistics statistics marketing marketing employees employees"
   ;
+  padding: 0.5rem 2rem;
 }
 
 .card--review {
