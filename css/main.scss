@@ -60,6 +60,10 @@ ol[role='list'] {
   list-style: none;
 }
 
+ul {
+  padding: 0;
+}
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -321,12 +325,36 @@ p>.material-icons {
   list-style: none;
 }
 
+.nav-item:hover,
+.nav-item:focus {
+  color: #{'hsl(var(--clr-white))'};
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-right {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .nav-right {
+    --flow-space: 0rem;
+    --gap: 1rem;
+    flex-direction: column;
+  }
+}
+
 // Button
 .btn {
   display: block;
   border: none;
   border-radius: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
   cursor: pointer;
   background: #{'hsl(var(--clr-primary))'};
 }

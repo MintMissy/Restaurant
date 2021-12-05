@@ -10,6 +10,35 @@
   padding: 0.5rem 2rem;
 }
 
+@media screen and (max-width: 1200px) {
+  .grid-container--dashboard {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "review review review review"
+      "review review review review"
+      "orders orders storage storage"
+      "statistics statistics marketing marketing"
+      "employees employees . ."
+    ;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container--dashboard {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "review"
+      "review"
+      "orders"
+      "storage"
+      "statistics"
+      "marketing"
+      "employees"
+    ;
+    padding: 0.5rem 1rem;
+  }
+}
+
 .card--review {
   grid-area: review;
 }
@@ -36,11 +65,29 @@
 
 // Different spacing cards
 .card-content--review {
-  --flow-space: clamp(2rem, 6vw, 10rem);
+  --gap: 1rem clamp(2rem, 6vw, 10rem);
+  flex-wrap: wrap;
 }
 
 .card--statistics,
 .card--marketing,
 .card--employees {
   --flow-space: 1rem;
+}
+
+
+@media screen and (max-width: 480px) {
+  .card-content {
+    --gap: 1rem 0;
+    justify-items: baseline;
+    align-items: baseline;
+  }
+
+  .card-content--review {
+    flex-direction: column;
+  }
+
+  .card-content h1 {
+    text-align: center;
+  }
 }
