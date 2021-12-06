@@ -50,7 +50,7 @@ CREATE TABLE `orders` (
   `delivery_place` varchar(70) NOT NULL,
   `delivery_postcode` varchar(8) NOT NULL,
   `order_date` datetime NOT NULL,
-  `ship_date` datetime,
+  `shipment_date` datetime,
   `pickup_date` datetime,
   PRIMARY KEY (id)
 );
