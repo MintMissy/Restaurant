@@ -7,7 +7,7 @@ CREATE TABLE `employees` (
   `postcode` varchar(13) NOT NULL,
   `shift_start` time,
   `shift_end` time,
-  `phone_number` varchar(10) NOT NULL DEFAULT '',
+  `phone_number` varchar(13) NOT NULL DEFAULT '',
   `left_days_off` int(2) NOT NULL DEFAULT 28,
   `job_position` varchar(45) NOT NULL DEFAULT 'Server',
   PRIMARY KEY (id)
@@ -20,7 +20,7 @@ CREATE TABLE `clients` (
   `sex` varchar(6),
   `residence` varchar(70) NOT NULL,
   `postcode` varchar(8) NOT NULL,
-  `phone_number` varchar(10) NOT NULL DEFAULT '',
+  `phone_number` varchar(13) NOT NULL DEFAULT '',
   PRIMARY KEY (id)
 );
 

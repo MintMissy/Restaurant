@@ -32,8 +32,24 @@ def generate_location():
 
 
 # ID NAME SURNAME SEX RESIDENCE POSTCODE PHONENUMBER
-def generate_client(postcode_to_residence):
-    f = open("generated-sql/clients-insert.sql", "w")
+def generate_clients(amount):
+    path = "generated-sql/clients-insert.sql"
+
+    f = open(path, "w")
+    f.write(f"INSERT INTO `clients`(`name`, `surname`, `sex`, `residence`, `postcode`, `phone_number`) VALUES\n")
+    f.close()
+
+    f = open(path, "a+")
+    for i in range(amount):
+        name, surname, sex = generate_person()
+        postcode, residence = generate_location()
+        phone_number = generate_phone_number()
+
+        if i != amount - 1:
+            f.write(f"('{name}','{surname}','{sex}','{residence}','{postcode}','{phone_number}'),\n")
+        else:
+            f.write(f"('{name}','{surname}','{sex}','{residence}','{postcode}','{phone_number}')")
+    f.close()
 
 
 # ID NAME SURNAME SEX RESIDENCE POSTCODE SHIFT_START SHIFT_END PHONE_NUMBER LEFT_DAYS_OFF JOB_POSITION
@@ -47,7 +63,6 @@ def generate_employees(amount):
     f.close()
 
     f = open(path, "a+")
-
     for i in range(amount):
         name, surname, sex = generate_person()
         postcode, residence = generate_location()
@@ -67,7 +82,7 @@ def generate_employees(amount):
 
 
 # ID NAME COST_NET
-def generate_meals(meal_names, min_price, max_price):
+def generate_meals(min_price, max_price):
     f = open("generated-sql/meals-insert.sql", "w")
     last_meal_name = meal_names[-1]
     f.write("INSERT INTO `meals`(`name`, `cost_net`) VALUES\n")
