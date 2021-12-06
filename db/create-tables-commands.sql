@@ -4,14 +4,14 @@ CREATE TABLE `employees` (
   `surname` varchar(45) NOT NULL,
   `sex` varchar(6),
   `residence` varchar(70) NOT NULL,
-  `postcode` varchar(8) NOT NULL,
+  `postcode` varchar(13) NOT NULL,
   `shift_start` time,
   `shift_end` time,
   `phone_number` varchar(10) NOT NULL DEFAULT '',
   `left_days_off` int(2) NOT NULL DEFAULT 28,
   `job_position` varchar(45) NOT NULL DEFAULT 'Server',
   PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE `clients` (
   `id` int(7) NOT NULL AUTO_INCREMENT UNIQUE,
@@ -22,7 +22,7 @@ CREATE TABLE `clients` (
   `postcode` varchar(8) NOT NULL,
   `phone_number` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE `storage` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
@@ -32,15 +32,15 @@ CREATE TABLE `storage` (
   `recommended_quantity` int(4) NOT NULL DEFAULT 35,
   PRIMARY KEY (id),
   UNIQUE(`id`, `item_name`)
-)
+);
 
 CREATE TABLE `meals` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(70) NOT NULL DEFAULT '',
-  `cost_net` decimal(6,2) NOT NULL DEFAULT 9.99,
+  `cost_net` decimal(6, 2) NOT NULL DEFAULT 9.99,
   PRIMARY KEY (id),
   UNIQUE(`id`, `name`)
-)
+);
 
 CREATE TABLE `orders` (
   `id` int(9) NOT NULL AUTO_INCREMENT UNIQUE,
@@ -53,4 +53,4 @@ CREATE TABLE `orders` (
   `ship_date` datetime,
   `pickup_date` datetime,
   PRIMARY KEY (id)
-)
+);

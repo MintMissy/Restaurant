@@ -17,4 +17,6 @@ meal_names = [
 ]
 
 if __name__ == '__main__':
-    generate_meals(meal_names, 9, 25)
+    # generate_meals(meal_names, 9, 25)
+    generate_employees(20)
+    pass
