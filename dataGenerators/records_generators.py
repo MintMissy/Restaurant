@@ -10,7 +10,7 @@ def generate_employee(amount):
 
 
 def generate_meals(meal_names, min_price, max_price):
-    f = open("meals.txt", "w")
+    f = open("meals.sql", "w")
 
     last_meal_name = meal_names[-1]
     f.write("INSERT INTO `meals`(`name`, `cost_net`) VALUES\n")
