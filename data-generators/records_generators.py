@@ -77,7 +77,7 @@ def generate_orders(days, min_client_id, max_client_id, min_meal_id, max_meal_id
             "`delivery_postcode`, `order_date`, `shipment_date`,`pickup_date`) VALUES\n")
     f.close()
 
-    order_dates = generate_order_dates("2021-11-13 06:00:00", days, 12, 26, 7, 27, 2, 5)
+    order_dates = generate_order_dates("2021-11-13 00:00:00", days, 12, 26, 7, 27, 2, 5)
 
     f = open(path, "a+")
     for i in range(len(order_dates)):
