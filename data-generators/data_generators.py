@@ -31,6 +31,7 @@ def generate_location():
     location_full = location + " " + str(random.randint(1, 49))
     return postcode, location_full
 
+
 def generate_order_dates(start_date, days_to_generate, min_preparation_time, max_preparation_time,
                          min_delivery_time, max_delivery_time, min_orders_per_hour, max_orders_per_hour):
     first_shift = 6
@@ -50,10 +51,13 @@ def generate_order_dates(start_date, days_to_generate, min_preparation_time, max
             for i in range(orders_in_hour):
                 bonus_days_in_timestamp = day * 24 * 60 * 60
                 bonus_hours_in_timestamp = hour * 60 * 60
+
+                ordering_date_offset_timestamp = random.randint(0, 60 * 60)
+
                 bonus_timestamp = bonus_days_in_timestamp + bonus_hours_in_timestamp
+                bonus_timestamp += ordering_date_offset_timestamp
 
                 ordering_date_timestamp = start_date + bonus_timestamp
-
                 ordering_date = datetime.fromtimestamp(ordering_date_timestamp)
                 shipment_date = ""
                 pickup_date = ""

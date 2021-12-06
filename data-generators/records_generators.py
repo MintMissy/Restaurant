@@ -1,5 +1,3 @@
-import random
-from dummy_data import *
 from data_generators import *
 
 
@@ -75,7 +73,7 @@ def generate_orders(days, min_client_id, max_client_id, min_meal_id, max_meal_id
     path = "generated-sql/orders-insert.sql"
 
     f = open(path, "w")
-    f.write("INSERT INTO `orders`(`client_id`, `meal_id`, `quantity`, `delivery_place`,"
+    f.write("INSERT INTO `orders`(`id`, `client_id`, `meal_id`, `quantity`, `delivery_place`,"
             "`delivery_postcode`, `order_date`, `shipment_date`,`pickup_date`) VALUES\n")
     f.close()
 
@@ -92,10 +90,10 @@ def generate_orders(days, min_client_id, max_client_id, min_meal_id, max_meal_id
         pickup_date = order_dates[i][2]
 
         if i != len(order_dates) - 1:
-            f.write(f"('{client_id}','{meal_id}','{quantity}','{delivery_place}', "
+            f.write(f"('{i+1}','{client_id}','{meal_id}','{quantity}','{delivery_place}', "
                     f"'{delivery_postcode}','{ordering_date}', '{shipment_date}', '{pickup_date}'),\n")
         else:
-            f.write(f"('{client_id}','{meal_id}','{quantity}','{delivery_place}', "
+            f.write(f"('{i+1}','{client_id}','{meal_id}','{quantity}','{delivery_place}', "
                     f"'{delivery_postcode}','{ordering_date}', '{shipment_date}', '{pickup_date}')")
 
     f.close()
