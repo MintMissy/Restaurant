@@ -1,11 +1,11 @@
 SELECT
-  delivery_postcode,
-  COUNT(id) AS orders_amount
+  COUNT(*) / (
+    SELECT
+      COUNT(*)
+    FROM
+      orders
+  ) * 100
 FROM
-  orders
-GROUP BY
-  delivery_postcode
-ORDER BY
-  orders_amount DESC
-LIMIT
-  1
+  orders o1
+WHERE
+  o1.order_type = 'Stationary';
