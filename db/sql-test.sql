@@ -1,6 +1,10 @@
 SELECT
-  COUNT(*)
+  *
 FROM
-  storage
+  employees
 WHERE
-  item_quantity = 0;
+  shift_start < '10:45:12'
+  AND ' 10 :45 :12 "' < shift_end
+ORDER BY
+  job_position,
+  name

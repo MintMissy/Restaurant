@@ -4,6 +4,7 @@ require_once './php/DatabaseConnector.php';
 require_once 'php/presenters/OrdersPresenter.php';
 require_once 'php/presenters/StoragePresenter.php';
 require_once 'php/presenters/DatesPresenter.php';
+require_once 'php/presenters/EmployeesPresenter.php';
 
 $connection = OpenConnection();
 ?>
@@ -357,23 +358,7 @@ $connection = OpenConnection();
           Working Employees
         </h1>
         <div class="text-primary--tint">
-          <!-- TODO Generate employees who're working right now -->
-          <p>
-            <i class="material-icons">face</i>
-            Mark Johnson:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">At Work
-            </span>
-          </p>
-          <p>
-            <i class="material-icons">face</i>
-            Mark Johnson:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">On Vacation</span>
-          </p>
-          <p>
-            <i class="material-icons">face</i>
-            Mark Johnson:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">After Work</span>
-          </p>
+          <?php PresentDashboardEmployeesBlock($connection) ?>
         </div>
       </div>
     </div>

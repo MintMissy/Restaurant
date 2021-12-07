@@ -1,14 +1,10 @@
 <?php
 function GetCurrentlyWorkingEmployees($connection)
 {
-    $sqlCurrentlyWorkingEmployees = "";
-    return;
-}
-
-function GetEmployeesOnVacation($connection)
-{
-    $sqlEmployeesOnVacation = "";
-    return;
+    // ANCHOR Replace with real hour
+    $currentHour = "10:45:12";
+    $sqlCurrentlyWorkingEmployees = "SELECT * FROM employees WHERE shift_start < '$currentHour' AND '$currentHour' < shift_end ORDER BY job_position, name";
+    return mysqli_query($connection, $sqlCurrentlyWorkingEmployees);
 }
 
 function GetEmployeesAfterWork($connection)
