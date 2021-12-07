@@ -62,11 +62,17 @@ $connection = OpenConnection();
               </p>
               <p>
                 Total orders:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">26</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Total orders to presenter -->
+                  26
+                </span>
               </p>
               <p>
                 Food of the Month:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">Chips</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Food of the week to presenter -->
+                  Chips
+                </span>
               </p>
             </div>
             <div class="text-primary--tint">
@@ -76,11 +82,17 @@ $connection = OpenConnection();
               </h2>
               <p>
                 Gross:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Monthly gross to presenter -->
+                  $14.00
+                </span>
               </p>
               <p>
                 Net:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Monthly net to presenter -->
+                  $14.00
+                </span>
               </p>
             </div>
             <div class="text-primary--tint">
@@ -89,16 +101,25 @@ $connection = OpenConnection();
                 Revenue
               </h2>
               <p class="week-review__content-progress">
-                Last week:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$1400</span>
+                Previous Month (net):
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Monthly net to presenter -->
+                  $1400
+                </span>
               </p>
               <p class="week-review__content-progress">
-                This week:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$1600</span>
+                Current Month (net):
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Monthly net to presenter -->
+                  $1600
+                </span>
               </p>
               <p class="week-review__content-progress">
                 Proportion:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">125%</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Proportion to presenter -->
+                  125%
+                </span>
               </p>
             </div>
           </div>
@@ -123,11 +144,17 @@ $connection = OpenConnection();
               </p>
               <p>
                 Total orders:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">26</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Total orders to presenter -->
+                  26
+                </span>
               </p>
               <p>
                 Food of the Week:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">Chips</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Food of the week to presenter -->
+                  Chips
+                </span>
               </p>
             </div>
             <div class="text-primary--tint">
@@ -137,11 +164,17 @@ $connection = OpenConnection();
               </h2>
               <p>
                 Gross:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Weekly gross to presenter -->
+                  $14.00
+                </span>
               </p>
               <p>
                 Net:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$14.00</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Weekly net to presenter -->
+                  $14.00
+                </span>
               </p>
             </div>
             <div class="text-primary--tint">
@@ -150,16 +183,25 @@ $connection = OpenConnection();
                 Revenue
               </h2>
               <p class="week-review__content-progress">
-                Last week:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$1400</span>
+                Previous week (net):
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Weekly net to presenter -->
+                  $1400
+                </span>
               </p>
               <p class="week-review__content-progress">
-                This week:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">$1600</span>
+                Current week (net):
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Weekly net to presenter -->
+                  $1600
+                </span>
               </p>
               <p class="week-review__content-progress">
                 Proportion:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">+25%</span>
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <!-- TODO Proportion to presenter -->
+                  +25%
+                </span>
               </p>
             </div>
           </div>
@@ -247,18 +289,26 @@ $connection = OpenConnection();
           <p>
             <i class="material-icons">local_shipping</i>
             Average Delivery Time:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">15min 5s
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- TODO Average delivery time to presenter -->
+              15min 5s
             </span>
           </p>
           <p>
             <i class="material-icons">star</i>
             Mostly bought meal:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">Pepper Chicken</span>
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- TODO Most bought meal to presenter -->
+              Pepper Chicken
+            </span>
           </p>
           <p>
             <i class="material-icons">star</i>
             Lorem Ipsum:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">Chips</span>
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- TODO Add category -->
+              Chips
+            </span>
           </p>
         </div>
       </div>
@@ -271,25 +321,32 @@ $connection = OpenConnection();
         <div class="text-primary--tint">
           <p>
             <i class="material-icons">apartment</i>
-            The Busiest City:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">Leszno
+            The Busiest Location:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentBusiestLocation($connection) ?>
             </span>
           </p>
           <p>
             <i class="material-icons">event</i>
             Busiest Day:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">Friday
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- TODO Busiest day to presenter -->
+              Friday
             </span>
           </p>
           <p>
             <i class="material-icons">history</i>
             Last purchase date:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">20.05.2021 10:05</span>
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentLastPurchaseDate($connection) ?>
+            </span>
           </p>
           <p>
             <i class="material-icons">lunch_dining</i>
             The Last sold meal:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">Spaghetti Bolognese</span>
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentLastSoldMeal($connection) ?>
+            </span>
           </p>
         </div>
       </div>
@@ -297,9 +354,10 @@ $connection = OpenConnection();
       <div class="card card--employees flow">
         <h1 class="ff-roboto fs-600 vertical-center">
           <i class="material-icons text-primary fs-700">groups</i>
-          Employees
+          Working Employees
         </h1>
         <div class="text-primary--tint">
+          <!-- TODO Generate employees who're working right now -->
           <p>
             <i class="material-icons">face</i>
             Mark Johnson:

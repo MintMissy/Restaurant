@@ -19,3 +19,21 @@ function PresentRealizedOrdersAmount($connection)
   $result = GetRealizedOrdersAmount($connection);
   PresentSingleMysqliRecord($result);
 }
+
+function PresentLastPurchaseDate($connection)
+{
+  $result = GetLastPurchaseDate($connection);
+  PresentSingleMysqliRecord($result);
+}
+
+function PresentBusiestLocation($connection)
+{
+  $result = GetBusiestLocation($connection);
+  PresentSingleMysqliRecord($result);
+}
+
+function PresentLastSoldMeal($connection)
+{
+  $result = GetLastSoldMeal($connection);
+  PresentSingleMysqliRecord($result);
+}
