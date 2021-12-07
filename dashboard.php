@@ -1,13 +1,13 @@
 <?php
 include './php/DatabaseConnector.php';
+include './php/fetchers/StorageFetcher.php';
 
-$conn = OpenConnection();
+$connection = OpenConnection();
 
-// $sql = 'SELECT * FROM storage';
-// $result = mysqli_query($conn, $sql);
-// while ($row = mysqli_fetch_array($result)) {
-//   echo $row['item_name'] . '<br/>';
-// }
+$result = GetIngriedientsList($connection);
+while ($row = mysqli_fetch_array($result)) {
+  echo $row['item_name'] . '<br/>';
+}
 
 ?>
 
@@ -319,4 +319,4 @@ $conn = OpenConnection();
 
 </html>
 
-<?php CloseConnection($conn); ?>
+<?php CloseConnection($connection); ?>

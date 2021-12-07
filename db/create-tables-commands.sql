@@ -54,3 +54,13 @@ CREATE TABLE `orders` (
   `pickup_date` datetime,
   PRIMARY KEY (id)
 );
+
+-- add column order_type
+ALTER TABLE `orders`
+ADD COLUMN order_type VARCHAR(20) AFTER pickup_date;
+
+-- add default values for newly created records 
+UPDATE `orders` SET `order_type`='To go' WHERE 1
+
+-- update where shipment_date = 0000-00-00 00:00:00 to stationary
+UPDATE `orders` SET `order_type`='Stationary' WHERE shipment_date = "0000-00-00 00:00:00"
