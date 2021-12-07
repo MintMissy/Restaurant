@@ -1,18 +1,18 @@
 <?php
-function GetIngriedientsList($connection)
+function GetIngredientsList($connection)
 {
-    $sqlIngriedientsList = "SELECT * FROM storage";
-    return mysqli_query($connection, $sqlIngriedientsList);
+    $sqlIngredientsList = "SELECT * FROM storage";
+    return mysqli_query($connection, $sqlIngredientsList);
 }
 
 function GetIngredientsNearlyDepleted($connection)
 {
-    $sqlIngredientsNearDepleted = "";
-    return;
+    $sqlIngredientsNearDepleted = "SELECT * FROM storage WHERE (item_quantity < recommended_quantity) AND item_quantity <> 0;";
+    return mysqli_query($connection, $sqlIngredientsNearDepleted);
 }
 
 function GetIngredientsMissing($connection)
 {
-    $sqlIngredientsMissing = "";
-    return;
+    $sqlIngredientsMissing = "SELECT * FROM storage WHERE item_quantity = 0;";
+    return mysqli_query($connection, $sqlIngredientsMissing);
 }
