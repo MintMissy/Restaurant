@@ -1,14 +1,11 @@
 <?php
-include './php/DatabaseConnector.php';
-include './php/fetchers/StorageFetcher.php';
+require_once './php/DatabaseConnector.php';
+
+require_once 'php/presenters/OrdersPresenter.php';
+require_once 'php/presenters/StoragePresenter.php';
+require_once 'php/presenters/DatesPresenter.php';
 
 $connection = OpenConnection();
-
-$result = GetIngriedientsList($connection);
-while ($row = mysqli_fetch_array($result)) {
-  echo $row['item_name'] . '<br/>';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +56,8 @@ while ($row = mysqli_fetch_array($result)) {
               </h2>
               <p>
                 Date Range:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">15.09-30.09
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <?php PresentDateRangeToPast("-4 week") ?>
                 </span>
               </p>
               <p>
@@ -119,7 +117,8 @@ while ($row = mysqli_fetch_array($result)) {
               </h2>
               <p>
                 Date Range:
-                <span class="card-content-value text-white--shade ff-roboto fs-300">15.09-30.09
+                <span class="card-content-value text-white--shade ff-roboto fs-300">
+                  <?php PresentDateRangeToPast("-1 week") ?>
                 </span>
               </p>
               <p>
@@ -177,7 +176,9 @@ while ($row = mysqli_fetch_array($result)) {
           <a href="" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">pending_actions</i>
-              Pending: <span class="card-content-value text-white--shade ff-roboto">4</span>
+              Pending: <span class="card-content-value text-white--shade ff-roboto">
+                <?php PresentPendingOrdersAmount($connection) ?>
+              </span>
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -185,7 +186,9 @@ while ($row = mysqli_fetch_array($result)) {
           <a href="" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">directions_car</i>
-              Shipped: <span class="card-content-value text-white--shade ff-roboto">5</span>
+              Shipped: <span class="card-content-value text-white--shade ff-roboto">
+                <?php PresentShippedOrdersAmount($connection) ?>
+              </span>
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -193,7 +196,9 @@ while ($row = mysqli_fetch_array($result)) {
           <a href="" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">task_alt</i>
-              Realized: <span class="card-content-value text-white--shade ff-roboto">2</span>
+              Realized: <span class="card-content-value text-white--shade ff-roboto">
+                <?php PresentRealizedOrdersAmount($connection) ?>
+              </span>
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -218,7 +223,7 @@ while ($row = mysqli_fetch_array($result)) {
           <a href="" class="highlighted-row flex fs-500">
             <p class="text-warning">
               <i class="material-icons">report_problem</i>
-              5 Ingredients Nearly Depleted
+              <?php PresentIngredientsNearlyDepletedAmount($connection) ?> Ingredients Nearly Depleted
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -226,7 +231,7 @@ while ($row = mysqli_fetch_array($result)) {
           <a href="" div class="highlighted-row flex fs-500">
             <p class="text-error">
               <i class="material-icons">error</i>
-              2 Ingredients Missing
+              <?php PresentIngredientsMissingAmount($connection) ?> Ingredients Missing
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>

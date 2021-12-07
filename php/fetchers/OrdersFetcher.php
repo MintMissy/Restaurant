@@ -8,7 +8,7 @@ function GetPendingOrders($connection)
 function GetPendingOrdersAmount($connection)
 {
     $sqlPendingOrdersAmount = "SELECT count(id) FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go' )";
-    return mysqli_query($connection, $sqlPendingOrdersAmount);
+    return mysqli_query($connection, $sqlPendingOrdersAmount);;
 }
 
 // Get shipped but not realized orders
@@ -32,7 +32,7 @@ function GetRealizedOrders($connection)
 
 function GetRealizedOrdersAmount($connection)
 {
-    $sqlRealizedOrdersAmount = "SELECT COUNT(id) FROM `orders` WHERE pickup_date <> 0000-00-00 00:00:00";
+    $sqlRealizedOrdersAmount = "SELECT COUNT(id) FROM `orders` WHERE pickup_date <> '0000-00-00 00:00:00'";
     return mysqli_query($connection, $sqlRealizedOrdersAmount);
 }
 
