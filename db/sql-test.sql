@@ -1,10 +1,11 @@
 SELECT
-  *
+  WEEKDAY(order_date) AS busiest_day,
+  COUNT(*) AS orders_amount
 FROM
-  employees
-WHERE
-  shift_start < '10:45:12'
-  AND ' 10 :45 :12 "' < shift_end
+  `orders`
+GROUP BY
+  busiest_day
 ORDER BY
-  job_position,
-  name
+  orders_amount DESC
+LIMIT
+  1

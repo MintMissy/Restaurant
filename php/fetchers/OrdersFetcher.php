@@ -41,13 +41,13 @@ function GetAveragePreparationTime($connection, $option = "general")
 {
     switch ($option) {
         case "general":
-            $sqlAveragePreparationTime = "SELECT AVG(t.time_diff) / 60 FROM ( SELECT TIMEDIFF(o1.pickup_date, o1.order_date) AS time_diff FROM orders o1 WHERE o1.order_type = 'Stationary' AND o1.order_date <> '0000-00-00 00:00:00' AND o1.pickup_date <> '0000-00-00 00:00:00' UNION ALL SELECT TIMEDIFF(o2.shipment_date, o2.order_date) AS time_diff FROM orders o2 WHERE o2.order_type = 'To go' AND o2.order_date <> '0000-00-00 00:00:00' AND o2.shipment_date <> '0000-00-00 00:00:00' ) t";
+            $sqlAveragePreparationTime = "SELECT AVG(t.time_diff) FROM ( SELECT TIMEDIFF(o1.pickup_date, o1.order_date) AS time_diff FROM orders o1 WHERE o1.order_type = 'Stationary' AND o1.order_date <> '0000-00-00 00:00:00' AND o1.pickup_date <> '0000-00-00 00:00:00' UNION ALL SELECT TIMEDIFF(o2.shipment_date, o2.order_date) AS time_diff FROM orders o2 WHERE o2.order_type = 'To go' AND o2.order_date <> '0000-00-00 00:00:00' AND o2.shipment_date <> '0000-00-00 00:00:00' ) t";
             return mysqli_query($connection, $sqlAveragePreparationTime);
         case "To go":
-            $sqlAveragePreparationTime = "SELECT AVG(TIMEDIFF(shipment_date, order_date)) / 60 FROM orders WHERE order_type = 'To go' AND order_date <> '0000-00-00 00:00:00' AND shipment_date <> '0000-00-00 00:00:00'";
+            $sqlAveragePreparationTime = "SELECT AVG(TIMEDIFF(shipment_date, order_date)) FROM orders WHERE order_type = 'To go' AND order_date <> '0000-00-00 00:00:00' AND shipment_date <> '0000-00-00 00:00:00'";
             return mysqli_query($connection, $sqlAveragePreparationTime);
         case "Stationary":
-            $sqlAveragePreparationTime = "SELECT AVG(TIMEDIFF(pickup_date, order_date)) / 60 FROM orders WHERE order_type = 'Stationary' AND order_date <> '0000-00-00 00:00:00' AND pickup_date <> '0000-00-00 00:00:00'";
+            $sqlAveragePreparationTime = "SELECT AVG(TIMEDIFF(pickup_date, order_date)) FROM orders WHERE order_type = 'Stationary' AND order_date <> '0000-00-00 00:00:00' AND pickup_date <> '0000-00-00 00:00:00'";
             return mysqli_query($connection, $sqlAveragePreparationTime);
         default:
             throw new Exception("Given average preparation time option doesn't exist", 1);
@@ -56,7 +56,7 @@ function GetAveragePreparationTime($connection, $option = "general")
 
 function GetAverageDeliveryTime($connection)
 {
-    $sqlAverageDeliveryTime = "SELECT AVG(TIMEDIFF(pickup_date, shipment_date)) / 60 FROM orders WHERE order_type = 'To go' AND shipment_date <> '0000-00-00 00:00:00' AND pickup_date <> '0000-00-00 00:00:00'";
+    $sqlAverageDeliveryTime = "SELECT AVG(TIMEDIFF(pickup_date, shipment_date)) FROM orders WHERE order_type = 'To go' AND shipment_date <> '0000-00-00 00:00:00' AND pickup_date <> '0000-00-00 00:00:00'";
     return mysqli_query($connection, $sqlAverageDeliveryTime);
 }
 
@@ -90,4 +90,11 @@ function GetBusiestLocation($connection)
 {
     $sqlBusiestLocation = "SELECT o.delivery_postcode FROM orders o JOIN ( SELECT delivery_postcode, COUNT(*) AS ctn FROM orders GROUP BY delivery_postcode ) o2 ON (o.delivery_postcode = o2.delivery_postcode) GROUP BY delivery_postcode ORDER BY o2.ctn DESC LIMIT 1";
     return mysqli_query($connection, $sqlBusiestLocation);
+}
+
+// Return busiest day as number 0-6 nad amount of orders in that day
+function GetBusiestWeekDay($connection)
+{
+    $sqlBusiestDay = "SELECT WEEKDAY(order_date) AS busiest_day, COUNT(*) AS orders_amount FROM `orders` GROUP BY busiest_day ORDER BY orders_amount DESC LIMIT 1";
+    return mysqli_query($connection, $sqlBusiestDay);
 }

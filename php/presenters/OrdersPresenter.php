@@ -1,6 +1,7 @@
 <?php
 require_once './php/fetchers/OrdersFetcher.php';
 require_once 'PresentersUtils.php';
+require_once "./php/Utils/DateUtils.php";
 
 function PresentPendingOrdersAmount($connection)
 {
@@ -36,4 +37,14 @@ function PresentLastSoldMeal($connection)
 {
   $result = GetLastSoldMeal($connection);
   PresentSingleMysqliRecord($result);
+}
+
+function PresentBusiestWeekDay($connection)
+{
+  $result = GetBusiestWeekDay($connection);
+
+  $busiestDayAsNumber = mysqli_fetch_array($result)[0];
+  $busiestDay = ConvertIntToWeekDay($busiestDayAsNumber);
+
+  echo $busiestDay;
 }

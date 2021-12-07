@@ -1,8 +1,7 @@
 <?php
 function GetCurrentlyWorkingEmployees($connection)
 {
-    // ANCHOR Replace with real hour
-    $currentHour = "10:45:12";
+    $currentHour = date("H:i:s", time());
     $sqlCurrentlyWorkingEmployees = "SELECT * FROM employees WHERE shift_start < '$currentHour' AND '$currentHour' < shift_end ORDER BY job_position, name";
     return mysqli_query($connection, $sqlCurrentlyWorkingEmployees);
 }

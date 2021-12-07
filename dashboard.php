@@ -329,10 +329,9 @@ $connection = OpenConnection();
           </p>
           <p>
             <i class="material-icons">event</i>
-            Busiest Day:
+            Busiest Week Day:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- TODO Busiest day to presenter -->
-              Friday
+              <?php PresentBusiestWeekDay($connection) ?>
             </span>
           </p>
           <p>
