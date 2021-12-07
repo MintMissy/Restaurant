@@ -17,13 +17,13 @@ function GetEmployeesAfterWork($connection)
     return;
 }
 
-function GetEmployesWithLessLeftDaysOff($connection, $leftDaysOffAmount)
+function GetEmployeesWithLessLeftDaysOff($connection, $leftDaysOffAmount)
 {
     $sqlEmployeesWithLessDaysOff = "SELECT * FROM `clients` WHERE left_days_off < $leftDaysOffAmount";
     return mysqli_query($connection, $sqlEmployeesWithLessDaysOff);
 }
 
-function GetEmployesWithMoreLeftDaysOff($connection, $leftDaysOffAmount)
+function GetEmployeesWithMoreLeftDaysOff($connection, $leftDaysOffAmount)
 {
     $sqlEmployeesWithMoreLeftDaysOff = "SELECT * FROM `clients` WHERE left_days_off > $leftDaysOffAmount";
     return mysqli_query($connection, $sqlEmployeesWithMoreLeftDaysOff);

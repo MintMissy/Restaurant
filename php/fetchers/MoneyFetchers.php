@@ -5,7 +5,7 @@ function GetGross($connection, $start_date, $end_date)
     return;
 }
 
-function GetNet($start_date, $connection, $end_date, $tax_percentage)
+function GetNet($connection, $start_date, $end_date, $tax_percentage)
 {
     $sqlNet = "";
     return;
@@ -13,6 +13,6 @@ function GetNet($start_date, $connection, $end_date, $tax_percentage)
 
 function GetRevenueProportion($connection, $start_date, $end_date)
 {
-    $sqRevenueProportionl = "";
+    $sqlRevenueProportion = "";
     return;
 }
