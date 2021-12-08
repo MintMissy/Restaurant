@@ -1,6 +1,12 @@
 <?php
 require_once "./php/Utils/DateUtils.php";
 
+function GetOrdersAmountFromRange($connection, $min, $max)
+{
+    $sqlOrdersAmountFromRange = "SELECT COUNT(*) AS 'orders_amount' FROM orders WHERE order_date BETWEEN '$min' AND '$max'";
+    return mysqli_query($connection, $sqlOrdersAmountFromRange);
+}
+
 function GetPendingOrders($connection)
 {
     $sqlPendingOrders = "SELECT * FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go' )";

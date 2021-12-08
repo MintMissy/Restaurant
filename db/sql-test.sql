@@ -1,10 +1,7 @@
-select
-  WEEKDAY(order_date)
+SELECT
+  COUNT(*) AS "orders_amount"
 FROM
   orders
-group by
-  WEEKDAY(ORDER_DATE)
-order by
-  count(order_date) desc
-limit
-  1
+WHERE
+  order_date BETWEEN '2021-11-21 00:00:00'
+  AND '2021-12-8 00:00:00'

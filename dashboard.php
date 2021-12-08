@@ -65,8 +65,7 @@ $connection = OpenConnection();
               <p>
                 Total orders:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Total orders to presenter -->
-                  26
+                  <?php PresentLastMonthOrdersAmount($connection) ?>
                 </span>
               </p>
               <p>
@@ -147,8 +146,7 @@ $connection = OpenConnection();
               <p>
                 Total orders:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Total orders to presenter -->
-                  26
+                  <?php PresentLastWeekOrderAmount($connection) ?>
                 </span>
               </p>
               <p>

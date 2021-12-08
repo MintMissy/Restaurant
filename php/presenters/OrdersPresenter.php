@@ -82,3 +82,25 @@ function PresentAveragePreparationTime($connection, $orderType = "general")
 
   echo GetMinutesAndSecondFromNumber($averagePreparationTime);
 }
+
+function PresentLastMonthOrdersAmount($connection)
+{
+  $dateFormat = "Y-m-d H:i:s";
+
+  $currentDate = date($dateFormat);
+  $monthAgoDate = date($dateFormat, strtotime("-4 week"));
+
+  $result = GetOrdersAmountFromRange($connection, $monthAgoDate, $currentDate);
+  return PresentSingleMysqliRecord($result);
+}
+
+function PresentLastWeekOrderAmount($connection)
+{
+  $dateFormat = "Y-m-d H:i:s";
+
+  $currentDate = date($dateFormat);
+  $weekAgoDate = date($dateFormat, strtotime("-1 week"));
+
+  $result = GetOrdersAmountFromRange($connection, $weekAgoDate, $currentDate);
+  return PresentSingleMysqliRecord($result);
+}
