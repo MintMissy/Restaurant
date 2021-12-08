@@ -92,9 +92,27 @@ function GetBusiestLocation($connection)
     return mysqli_query($connection, $sqlBusiestLocation);
 }
 
-// Return busiest day as number 0-6 nad amount of orders in that day
 function GetBusiestWeekDay($connection)
 {
-    $sqlBusiestDay = "SELECT WEEKDAY(order_date) AS busiest_day, COUNT(*) AS orders_amount FROM `orders` GROUP BY busiest_day ORDER BY orders_amount DESC LIMIT 1";
-    return mysqli_query($connection, $sqlBusiestDay);
+    $sqlBusiestDay = "SELECT WEEKDAY(order_date) FROM orders group by WEEKDAY(ORDER_DATE) ORDER BY count(order_date) DESC LIMIT 1";
+    $result = mysqli_query($connection, $sqlBusiestDay);
+    $busiestDayAsNumber = mysqli_fetch_array($result)[0];
+    $busiestDay = ConvertIntToWeekDay($busiestDayAsNumber);
+    return $busiestDay;
+}
+
+function GetQuietestWeekDay($connection)
+{
+    $sqlQuietestDay = "SELECT WEEKDAY(order_date) FROM orders group by WEEKDAY(ORDER_DATE) ORDER BY count(order_date) LIMIT 1";
+    $result = mysqli_query($connection, $sqlQuietestDay);
+    $quietestDayAsNumber = mysqli_fetch_array($result)[0];
+    $quietestDay = ConvertIntToWeekDay($quietestDayAsNumber);
+    return $quietestDay;
+}
+
+// Returns array of [weekDayAsInt, orderAmount]
+function GetOrderAmountByDay($connection)
+{
+    $sqlOrderAmountByDay = "SELECT WEEKDAY(order_date) AS busiest_day, COUNT(*) AS orders_amount FROM `orders` GROUP BY busiest_day ORDER BY orders_amount DESC LIMIT 1";
+    return mysqli_query($connection, $sqlOrderAmountByDay);
 }

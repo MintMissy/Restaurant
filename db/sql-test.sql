@@ -1,11 +1,10 @@
-SELECT
-  WEEKDAY(order_date) AS busiest_day,
-  COUNT(*) AS orders_amount
+select
+  WEEKDAY(order_date)
 FROM
-  `orders`
-GROUP BY
-  busiest_day
-ORDER BY
-  orders_amount DESC
-LIMIT
+  orders
+group by
+  WEEKDAY(ORDER_DATE)
+order by
+  count(order_date) desc
+limit
   1

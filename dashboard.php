@@ -335,6 +335,13 @@ $connection = OpenConnection();
             </span>
           </p>
           <p>
+            <i class="material-icons">event</i>
+            Quietest Week Day:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentQuietestWeekDay($connection) ?>
+            </span>
+          </p>
+          <p>
             <i class="material-icons">history</i>
             Last purchase date:
             <span class="card-content-value text-white--shade ff-roboto fs-300">

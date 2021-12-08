@@ -42,9 +42,11 @@ function PresentLastSoldMeal($connection)
 function PresentBusiestWeekDay($connection)
 {
   $result = GetBusiestWeekDay($connection);
+  echo $result;
+}
 
-  $busiestDayAsNumber = mysqli_fetch_array($result)[0];
-  $busiestDay = ConvertIntToWeekDay($busiestDayAsNumber);
-
-  echo $busiestDay;
+function PresentQuietestWeekDay($connection)
+{
+  $result = GetQuietestWeekDay($connection);
+  echo $result;
 }
