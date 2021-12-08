@@ -5,6 +5,7 @@ require_once 'php/presenters/OrdersPresenter.php';
 require_once 'php/presenters/StoragePresenter.php';
 require_once 'php/presenters/DatesPresenter.php';
 require_once 'php/presenters/EmployeesPresenter.php';
+require_once 'php/presenters/ClientsPresenter.php';
 
 $connection = OpenConnection();
 ?>
@@ -291,21 +292,18 @@ $connection = OpenConnection();
             <i class="material-icons">local_shipping</i>
             Average Preparation Time:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- ANCHOR Average delivery time to presenter -->
               <?php PresentAveragePreparationTime($connection) ?>
             </span>
           <p>
             <i class="material-icons">local_shipping</i>
             Average "Stationary" Preparation Time:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- ANCHOR Average delivery time to presenter -->
               <?php PresentAveragePreparationTime($connection, "Stationary") ?>
             </span>
           <p>
             <i class="material-icons">local_shipping</i>
             Average "To Go" Preparation Time:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- ANCHOR Average delivery time to presenter -->
               <?php PresentAveragePreparationTime($connection, "To go") ?>
             </span>
           </p>
@@ -313,30 +311,35 @@ $connection = OpenConnection();
             <i class="material-icons">local_shipping</i>
             Average Delivery Time:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- ANCHOR Average delivery time to presenter -->
               <?php PresentAverageDeliveryTime($connection) ?>
             </span>
           </p>
           <p>
             <i class="material-icons">star</i>
-            Mostly bought meal:
-            <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- TODO Most bought meal to presenter -->
-              Pepper Chicken
-            </span>
-          </p>
-          <p>
-            <i class="material-icons">star</i>
-            Stationary Orders Percentage:
+            "Stationary" Orders Percentage:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
               <?php PresentStationaryOrdersPercentage($connection) ?>
             </span>
           </p>
           <p>
             <i class="material-icons">star</i>
-            Togo Orders Percentage:
+            "To Go" Orders Percentage:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
               <?php PresentTogoOrdersPercentage($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Restaurant Best Client:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentRestaurantBestClient($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Restaurant Most Lavish Client:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentMostLavishClient($connection) ?>
             </span>
           </p>
         </div>
@@ -381,6 +384,14 @@ $connection = OpenConnection();
             The Last sold meal:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
               <?php PresentLastSoldMeal($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Mostly bought meal:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- TODO Most bought meal to presenter -->
+              Pepper Chicken
             </span>
           </p>
         </div>

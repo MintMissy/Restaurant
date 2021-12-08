@@ -1,5 +1,4 @@
 <?php
-
 function PresentDateRangeToPast($timeBehind, $dateFormat = 'd.m', $dateSeparator = ' - ')
 {
   $currentDate = date($dateFormat, time());
