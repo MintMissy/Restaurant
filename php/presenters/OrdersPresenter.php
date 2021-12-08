@@ -1,7 +1,7 @@
 <?php
 require_once './php/fetchers/OrdersFetcher.php';
+require_once './php/Utils/NumberUtils.php';
 require_once 'PresentersUtils.php';
-require_once "./php/Utils/DateUtils.php";
 
 function PresentPendingOrdersAmount($connection)
 {
@@ -49,4 +49,36 @@ function PresentQuietestWeekDay($connection)
 {
   $result = GetQuietestWeekDay($connection);
   echo $result;
+}
+
+function PresentToGoOrdersPercentage($connection)
+{
+  $result = GetPercentageOfTypeOfOrder($connection, "To go");
+  $toGoOrdersPercentage = mysqli_fetch_array($result)[0];
+
+  echo GetNumberPercentageAsStr($toGoOrdersPercentage);
+}
+
+function PresentStationaryOrdersPercentage($connection)
+{
+  $result = GetPercentageOfTypeOfOrder($connection, "Stationary");
+  $stationaryOrdersPercentage = mysqli_fetch_array($result)[0];
+
+  echo GetNumberPercentageAsStr($stationaryOrdersPercentage);
+}
+
+function PresentAverageDeliveryTime($connection)
+{
+  $result = GetAverageDeliveryTime($connection);
+  $averageDeliveryTime = mysqli_fetch_array($result)[0];
+
+  echo GetMinutesAndSecondFromNumber($averageDeliveryTime);
+}
+
+function PresentAveragePreparationTime($connection, $orderType = "general")
+{
+  $result = GetAveragePreparationTime($connection, $orderType);
+  $averagePreparationTime = mysqli_fetch_array($result)[0];
+
+  echo GetMinutesAndSecondFromNumber($averagePreparationTime);
 }

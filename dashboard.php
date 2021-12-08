@@ -289,10 +289,32 @@ $connection = OpenConnection();
         <div class="text-primary--tint">
           <p>
             <i class="material-icons">local_shipping</i>
+            Average Preparation Time:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- ANCHOR Average delivery time to presenter -->
+              <?php PresentAveragePreparationTime($connection) ?>
+            </span>
+          <p>
+            <i class="material-icons">local_shipping</i>
+            Average "Stationary" Preparation Time:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- ANCHOR Average delivery time to presenter -->
+              <?php PresentAveragePreparationTime($connection, "Stationary") ?>
+            </span>
+          <p>
+            <i class="material-icons">local_shipping</i>
+            Average "To Go" Preparation Time:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <!-- ANCHOR Average delivery time to presenter -->
+              <?php PresentAveragePreparationTime($connection, "To go") ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">local_shipping</i>
             Average Delivery Time:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- TODO Average delivery time to presenter -->
-              15min 5s
+              <!-- ANCHOR Average delivery time to presenter -->
+              <?php PresentAverageDeliveryTime($connection) ?>
             </span>
           </p>
           <p>
@@ -305,10 +327,16 @@ $connection = OpenConnection();
           </p>
           <p>
             <i class="material-icons">star</i>
-            Lorem Ipsum:
+            Stationary Orders Percentage:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- TODO Add category -->
-              Chips
+              <?php PresentStationaryOrdersPercentage($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Togo Orders Percentage:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentTogoOrdersPercentage($connection) ?>
             </span>
           </p>
         </div>
