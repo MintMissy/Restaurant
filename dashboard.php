@@ -319,9 +319,9 @@ $connection = OpenConnection();
           </p>
           <p>
             <i class="material-icons">star</i>
-            Restaurant Best Client:
+            Restaurant Most Loyal Client:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <?php PresentRestaurantBestClient($connection) ?>
+              <?php PresentRestaurantMostLoyalClient($connection) ?>
             </span>
           </p>
           <p>

@@ -8,8 +8,8 @@ function PresentMostLavishClient($connection)
   PresentSingleMysqliRecord($result);
 }
 
-function PresentRestaurantBestClient($connection)
+function PresentRestaurantMostLoyalClient($connection)
 {
-  $result = GetRestaurantBestClient($connection);
+  $result = GetRestaurantMostLoyalClient($connection);
   PresentSingleMysqliRecord($result);
 }

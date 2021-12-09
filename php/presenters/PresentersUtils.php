@@ -1,5 +1,5 @@
 <?php
-require_once './php/Utils/NumberUtils.php';
+require_once './php/utils/NumberUtils.php';
 
 function PresentSingleMysqliRecord($mysqliResult, $displayFormat = "general")
 {

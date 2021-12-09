@@ -8,7 +8,7 @@ function GetMostLavishClient($connection)
 
 // Get client name and surname who made the biggest number of orders
 // Returns [client, orderedMeals]
-function GetRestaurantBestClient($connection)
+function GetRestaurantMostLoyalClient($connection)
 {
     $sqlRestaurantBestClient = "SELECT CONCAT(c.name, ' ', c.surname) AS best_client, COUNT(o.id) AS orders_amount FROM orders o JOIN clients c ON c.id = o.client_id GROUP BY c.id ORDER BY orders_amount DESC LIMIT 1";
     return mysqli_query($connection, $sqlRestaurantBestClient);

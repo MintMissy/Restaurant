@@ -1,4 +1,5 @@
 <?php
+$mysqlDateFormat = "Y-m-d H:i:s";
 
 function ConvertIntToWeekDay($weekDay)
 {

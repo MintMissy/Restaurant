@@ -1,6 +1,7 @@
 <?php
+require_once './php/utils/DateUtils.php';
+require_once './php/utils/NumberUtils.php';
 require_once './php/fetchers/OrdersFetcher.php';
-require_once './php/Utils/NumberUtils.php';
 require_once 'PresentersUtils.php';
 
 function PresentPendingOrdersAmount($connection)
@@ -85,10 +86,10 @@ function PresentAveragePreparationTime($connection, $orderType = "general")
 
 function PresentLastMonthOrdersAmount($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
+  global $mysqlDateFormat;
 
-  $currentDate = date($dateFormat);
-  $monthAgoDate = date($dateFormat, strtotime("-4 week"));
+  $currentDate = date($mysqlDateFormat);
+  $monthAgoDate = date($mysqlDateFormat, strtotime("-4 week"));
 
   $result = GetOrdersAmountFromRange($connection, $currentDate, $monthAgoDate);
   PresentSingleMysqliRecord($result);
@@ -96,10 +97,10 @@ function PresentLastMonthOrdersAmount($connection)
 
 function PresentLastWeekOrderAmount($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
+  global $mysqlDateFormat;
 
-  $currentDate = date($dateFormat);
-  $weekAgoDate = date($dateFormat, strtotime("-1 week"));
+  $currentDate = date($mysqlDateFormat);
+  $weekAgoDate = date($mysqlDateFormat, strtotime("-1 week"));
 
   $result = GetOrdersAmountFromRange($connection, $currentDate, $weekAgoDate);
   PresentSingleMysqliRecord($result);

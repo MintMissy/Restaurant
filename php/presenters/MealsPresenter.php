@@ -1,4 +1,5 @@
 <?php
+require_once './php/utils/DateUtils.php';
 require_once './php/fetchers/MealsFetcher.php';
 require_once 'PresentersUtils.php';
 
@@ -28,10 +29,10 @@ function PresentMostlyBoughtMeal($connection)
 
 function PresentFoodOfTheMonth($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
+  global $mysqlDateFormat;
 
-  $currentDate = date($dateFormat);
-  $monthAgoDate = date($dateFormat, strtotime("-4 week"));
+  $currentDate = date($mysqlDateFormat);
+  $monthAgoDate = date($mysqlDateFormat, strtotime("-4 week"));
 
   $result = GetMostlyBoughtMealFromRange($connection, $currentDate, $monthAgoDate);
   PresentSingleMysqliRecord($result);
@@ -39,10 +40,10 @@ function PresentFoodOfTheMonth($connection)
 
 function PresentFoodOfTheWeek($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
+  global $mysqlDateFormat;
 
-  $currentDate = date($dateFormat);
-  $weekAgoDate = date($dateFormat, strtotime("-1 week"));
+  $currentDate = date($mysqlDateFormat);
+  $weekAgoDate = date($mysqlDateFormat, strtotime("-1 week"));
 
   $result = GetMostlyBoughtMealFromRange($connection, $currentDate, $weekAgoDate);
   PresentSingleMysqliRecord($result);

@@ -1,5 +1,5 @@
 <?php
-require_once "./php/Utils/DateUtils.php";
+require_once "./php/utils/DateUtils.php";
 
 function GetOrdersAmountFromRange($connection, $currentDate, $previousDate)
 {
