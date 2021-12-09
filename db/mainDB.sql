@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Gru 2021, 10:22
--- Wersja serwera: 10.4.19-MariaDB
--- Wersja PHP: 8.0.7
+-- Generation Time: Dec 09, 2021 at 08:03 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `restaurant`
+-- Database: `restaurant`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `clients`
+-- Table structure for table `clients`
 --
 
 CREATE TABLE `clients` (
@@ -38,7 +38,7 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `clients`
+-- Dumping data for table `clients`
 --
 
 INSERT INTO `clients` (`id`, `name`, `surname`, `sex`, `residence`, `postcode`, `phone_number`) VALUES
@@ -166,7 +166,7 @@ INSERT INTO `clients` (`id`, `name`, `surname`, `sex`, `residence`, `postcode`, 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `employees`
+-- Table structure for table `employees`
 --
 
 CREATE TABLE `employees` (
@@ -184,7 +184,7 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `employees`
+-- Dumping data for table `employees`
 --
 
 INSERT INTO `employees` (`id`, `name`, `surname`, `sex`, `residence`, `postcode`, `shift_start`, `shift_end`, `phone_number`, `left_days_off`, `job_position`) VALUES
@@ -212,7 +212,7 @@ INSERT INTO `employees` (`id`, `name`, `surname`, `sex`, `residence`, `postcode`
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `meals`
+-- Table structure for table `meals`
 --
 
 CREATE TABLE `meals` (
@@ -222,18 +222,18 @@ CREATE TABLE `meals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `meals`
+-- Dumping data for table `meals`
 --
 
 INSERT INTO `meals` (`id`, `name`, `cost_net`) VALUES
-(1, 'Braised Leeks with Mozzarella', '13.68'),
-(2, 'Lamb Salad with Fregola', '11.24'),
-(3, 'Smoked Pork Jowl with Pickles', '21.53'),
-(4, 'Scallop Sashimi with Meyer', '23.53'),
+(1, 'Braised Leeks', '13.68'),
+(2, 'Lamb Salad', '11.24'),
+(3, 'Smoked Pork Jowl', '21.53'),
+(4, 'Scallop Sashimi', '23.53'),
 (5, 'Vegan Charcuterie', '24.08'),
-(6, 'Pappardelle with Sea Urchin', '22.82'),
-(7, 'Pork Rillette Hand Pies', '19.52'),
-(8, 'Malted Custard French Toast', '11.57'),
+(6, 'Pappardelle', '22.82'),
+(7, 'Pork Rillette', '19.52'),
+(8, 'French Toast', '11.57'),
 (9, 'Pasta with Lamb', '15.15'),
 (10, 'Island Duck', '18.74'),
 (11, 'Potted Crab', '22.04'),
@@ -243,7 +243,7 @@ INSERT INTO `meals` (`id`, `name`, `cost_net`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -260,7 +260,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `client_id`, `meal_id`, `quantity`, `delivery_place`, `delivery_postcode`, `order_date`, `shipment_date`, `pickup_date`, `order_type`) VALUES
@@ -2557,7 +2557,7 @@ INSERT INTO `orders` (`id`, `client_id`, `meal_id`, `quantity`, `delivery_place`
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `storage`
+-- Table structure for table `storage`
 --
 
 CREATE TABLE `storage` (
@@ -2569,7 +2569,7 @@ CREATE TABLE `storage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `storage`
+-- Dumping data for table `storage`
 --
 
 INSERT INTO `storage` (`id`, `item_name`, `item_quantity`, `quantity_unit`, `recommended_quantity`) VALUES
@@ -2591,74 +2591,74 @@ INSERT INTO `storage` (`id`, `item_name`, `item_quantity`, `quantity_unit`, `rec
 (16, 'Black Beans', 6, 'kg', 5);
 
 --
--- Indeksy dla zrzutów tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksy dla tabeli `clients`
+-- Indexes for table `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Indeksy dla tabeli `employees`
+-- Indexes for table `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Indeksy dla tabeli `meals`
+-- Indexes for table `meals`
 --
 ALTER TABLE `meals`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`,`name`);
 
 --
--- Indeksy dla tabeli `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Indeksy dla tabeli `storage`
+-- Indexes for table `storage`
 --
 ALTER TABLE `storage`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`,`item_name`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `clients`
+-- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
--- AUTO_INCREMENT dla tabeli `employees`
+-- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT dla tabeli `meals`
+-- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT dla tabeli `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2335;
 
 --
--- AUTO_INCREMENT dla tabeli `storage`
+-- AUTO_INCREMENT for table `storage`
 --
 ALTER TABLE `storage`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;

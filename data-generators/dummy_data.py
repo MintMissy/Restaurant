@@ -115,14 +115,14 @@ default_job_positions = [
 ]
 
 meal_names = [
-    "Braised Leeks with Mozzarella",
-    "Lamb Salad with Fregola",
-    "Smoked Pork Jowl with Pickles",
-    "Scallop Sashimi with Meyer",
+    "Braised Leeks",
+    "Lamb Salad",
+    "Smoked Pork Jowl",
+    "Scallop Sashimi",
     "Vegan Charcuterie",
-    "Pappardelle with Sea Urchin",
-    "Pork Rillette Hand Pies",
-    "Malted Custard French Toast",
+    "Pappardelle",
+    "Pork Rillette",
+    "French Toast",
     "Pasta with Lamb",
     "Island Duck",
     "Potted Crab",
