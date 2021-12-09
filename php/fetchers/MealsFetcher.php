@@ -1,20 +1,30 @@
 <?php
-
-// A person who ordered the most amount of orders
-function GetBiggestMealsAficionado($connection)
+function GetMostlyBoughtMealFromRange($connection, $min, $max)
 {
-    $sqlBiggestMealsAficionado = "";
-    return;
+    $sqlMostlyBoughMealFromTimeRange = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE o.order_date BETWEEN '$min' AND o.order_date < '$max' GROUP BY m.id ORDER BY SUM(o.quantity) DESC LIMIT 1";
+    return mysqli_query($connection, $sqlMostlyBoughMealFromTimeRange);
+}
+
+function GetLeastRevenueMeal($connection)
+{
+    $sqlLeastRevenueMeal = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE 1 GROUP BY m.id ORDER BY SUM(o.quantity * m.cost_net) LIMIT 1";
+    return mysqli_query($connection, $sqlLeastRevenueMeal);
 }
 
 function GetMostRevenueMeal($connection)
 {
-    $sqlMostRevenueMeal = "";
-    return;
+    $sqlMostRevenueMeal = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE 1 GROUP BY m.id ORDER BY SUM(o.quantity * m.cost_net) DESC LIMIT 1";
+    return mysqli_query($connection, $sqlMostRevenueMeal);
+}
+
+function GetLeastBoughtMeal($connection)
+{
+    $sqlLeastBoughtMeal = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE 1 GROUP BY m.id ORDER BY SUM(o.quantity) LIMIT 1";
+    return mysqli_query($connection, $sqlLeastBoughtMeal);
 }
 
 function GetMostlyBoughtMeal($connection)
 {
-    $sqlMostBoughtMeal = "";
-    return;
+    $sqlMostBoughtMeal = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE 1 GROUP BY m.id ORDER BY SUM(o.quantity) DESC LIMIT 1";
+    return mysqli_query($connection, $sqlMostBoughtMeal);
 }

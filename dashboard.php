@@ -6,6 +6,7 @@ require_once 'php/presenters/StoragePresenter.php';
 require_once 'php/presenters/DatesPresenter.php';
 require_once 'php/presenters/EmployeesPresenter.php';
 require_once 'php/presenters/ClientsPresenter.php';
+require_once 'php/presenters/MealsPresenter.php';
 
 $connection = OpenConnection();
 ?>
@@ -71,8 +72,7 @@ $connection = OpenConnection();
               <p>
                 Food of the Month:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Food of the week to presenter -->
-                  Chips
+                  <?php PresentFoodOfTheMonth($connection) ?>
                 </span>
               </p>
             </div>
@@ -153,7 +153,7 @@ $connection = OpenConnection();
                 Food of the Week:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
                   <!-- TODO Food of the week to presenter -->
-                  Chips
+                  <?php PresentFoodOfTheWeek($connection) ?>
                 </span>
               </p>
             </div>
@@ -388,8 +388,28 @@ $connection = OpenConnection();
             <i class="material-icons">star</i>
             Mostly bought meal:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
-              <!-- TODO Most bought meal to presenter -->
-              Pepper Chicken
+              <?php PresentMostlyBoughtMeal($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Most revenue meal:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentMostRevenueMeal($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Least bough meal:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentLeastBoughtMeal($connection) ?>
+            </span>
+          </p>
+          <p>
+            <i class="material-icons">star</i>
+            Least revenue meal:
+            <span class="card-content-value text-white--shade ff-roboto fs-300">
+              <?php PresentLeastRevenueMeal($connection) ?>
             </span>
           </p>
         </div>

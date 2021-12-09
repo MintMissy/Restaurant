@@ -91,7 +91,7 @@ function PresentLastMonthOrdersAmount($connection)
   $monthAgoDate = date($dateFormat, strtotime("-4 week"));
 
   $result = GetOrdersAmountFromRange($connection, $monthAgoDate, $currentDate);
-  return PresentSingleMysqliRecord($result);
+  PresentSingleMysqliRecord($result);
 }
 
 function PresentLastWeekOrderAmount($connection)
@@ -102,5 +102,5 @@ function PresentLastWeekOrderAmount($connection)
   $weekAgoDate = date($dateFormat, strtotime("-1 week"));
 
   $result = GetOrdersAmountFromRange($connection, $weekAgoDate, $currentDate);
-  return PresentSingleMysqliRecord($result);
+  PresentSingleMysqliRecord($result);
 }
