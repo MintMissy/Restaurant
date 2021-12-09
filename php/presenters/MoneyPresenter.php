@@ -1,54 +1,44 @@
 <?php
 require_once './php/fetchers/MoneyFetchers.php';
 require_once 'PresentersUtils.php';
-require_once './php/Utils/NumberUtils.php';
 
 function PresentCurrentMonthNetIncome($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
-
-  $currentDate = date($dateFormat);
-  $monthAgoDate = date($dateFormat, strtotime("-4 week"));
-
-  $result = GetNetIncomeFromRange($connection, $currentDate, $monthAgoDate);
-  $record = mysqli_fetch_array($result)[0];
-  echo "$" . $record;
+  $result = GetCurrentMonthNetIncome($connection);
+  PresentSingleMysqliRecord($result, 'money');
 }
 
 function PresentCurrentWeekNetIncome($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
-
-  $currentDate = date($dateFormat);
-  $weekAgoDate = date($dateFormat, strtotime("-1 week"));
-
-  $result = GetNetIncomeFromRange($connection, $currentDate, $weekAgoDate);
-  $record = mysqli_fetch_array($result)[0];
-  echo "$" . $record;
+  $result = GetCurrentWeekNetIncome($connection);
+  PresentSingleMysqliRecord($result, 'money');
 }
 
 function PresentCurrentMonthGrossIncome($connection)
 {
-  $dateFormat = "Y-m-d H:i:s";
-
-  $currentDate = date($dateFormat);
-  $monthAgoDate = date($dateFormat, strtotime("-4 week"));
-
-  $result = GetNetIncomeFromRange($connection, $currentDate, $monthAgoDate);
-  $record = mysqli_fetch_array($result)[0];
-  echo "$" . GetGrossedPrice($record);
+  $result = GetCurrentMonthGrossIncome($connection);
+  PresentSingleMysqliGrossPrice($result, 'money');
 }
 
 function PresentCurrentWeekGrossIncome($connection)
 {
-  global $STANDARD_TAX_RATE;
+  $result = GetCurrentWeekGrossIncome($connection);
+  PresentSingleMysqliGrossPrice($result, 'money');
+}
 
-  $dateFormat = "Y-m-d H:i:s";
+function PresentPreviousMonthNetIncome($connection)
+{
+  $result = GetPreviousMonthNetIncome($connection);
+  PresentSingleMysqliRecord($result, 'money');
+}
 
-  $currentDate = date($dateFormat);
-  $weekAgoDate = date($dateFormat, strtotime("-1 week"));
+function PresentPreviousWeekNetIncome($connection)
+{
+  $result = GetPreviousWeekNetIncome($connection);
+  PresentSingleMysqliRecord($result, 'money');
+}
 
-  $result = GetNetIncomeFromRange($connection, $currentDate, $weekAgoDate);
-  $record = mysqli_fetch_array($result)[0];
-  echo "$" . GetGrossedPrice($record);
+function PresentLastWeekNetIncomeProportion($connection)
+{
+  # code...
 }

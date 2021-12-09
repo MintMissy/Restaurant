@@ -79,7 +79,7 @@ $connection = OpenConnection();
             </div>
             <div class="text-primary--tint">
               <h2 class="text-white">
-                <span class="material-icons">monetization_on</span>
+                <i class="material-icons">monetization_on</i>
                 Income
               </h2>
               <p>
@@ -97,21 +97,19 @@ $connection = OpenConnection();
             </div>
             <div class="text-primary--tint">
               <h2 class="text-white">
-                <span class="material-icons">trending_up</span>
+                <i class="material-icons">trending_up</i>
                 Revenue
               </h2>
               <p class="week-review__content-progress">
                 Previous Month (net):
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Monthly net to presenter -->
-                  $1400
+                  <?php PresentPreviousMonthNetIncome($connection) ?>
                 </span>
               </p>
               <p class="week-review__content-progress">
                 Current Month (net):
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Monthly net to presenter -->
-                  $1600
+                  <?php PresentCurrentMonthNetIncome($connection) ?>
                 </span>
               </p>
               <p class="week-review__content-progress">
@@ -158,7 +156,7 @@ $connection = OpenConnection();
             </div>
             <div class="text-primary--tint">
               <h2 class="text-white">
-                <span class="material-icons">monetization_on</span>
+                <i class="material-icons">monetization_on</i>
                 Income
               </h2>
               <p>
@@ -176,7 +174,7 @@ $connection = OpenConnection();
             </div>
             <div class="text-primary--tint">
               <h2 class="text-white">
-                <span class="material-icons">trending_up</span>
+                <i class="material-icons">trending_up</i>
                 Revenue
               </h2>
               <p class="week-review__content-progress">

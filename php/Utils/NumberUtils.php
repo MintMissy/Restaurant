@@ -20,3 +20,8 @@ function GetGrossedPrice($price)
   global $STANDARD_TAX_RATE;
   return round($price * (1 - $STANDARD_TAX_RATE), 2);
 }
+
+function GetPercentageProportion($firstNumber, $secondNumber)
+{
+  return round($firstNumber / $secondNumber * 100, 2);
+}
