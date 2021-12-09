@@ -10,22 +10,6 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<?php
-// $admin_login = 'login';
-// $admin_password = 'zaq1';
-
-// if (isset($_POST['login']) && isset($_POST['password'])) {
-//     $login = $_POST['login'];
-//     $password = $_POST['password'];
-
-//     if ($login == $admin_login && $password == $admin_password) {
-//         // echo ("logged in");
-//     }
-// } else {
-//     // echo ("Fill the form");
-// }
-?>
-
 <body>
   <form action="dashboard.php" method="POST" class="login-form flex-column flow">
     <h1 class="login-form-title letter-spacing-1 fs-800">Welcome!</h1>

@@ -533,8 +533,10 @@ p > .material-icons {
   background: hsl(var(--clr-dark), .8);
   height: 100vh;
   width: 23em;
-  padding: 18vh 3em;
-  justify-items: center;
+  padding: 6vh 3em 18vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-shadow: 0 0 30px 50px hsl(var(--clr-dark), .8);
           box-shadow: 0 0 30px 50px hsl(var(--clr-dark), .8);
 }
@@ -543,7 +545,10 @@ p > .material-icons {
   .login-form {
     background: hsl(var(--clr-dark), .8);
     width: 100vw;
-    padding: 18vh 2em;
+    padding: 10vh 2em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-shadow: none;
             box-shadow: none;
   }

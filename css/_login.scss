@@ -2,8 +2,8 @@
   background: #{'hsl(var(--clr-dark), .8)'};
   height: 100vh;
   width: 23em;
-  padding: 18vh 3em;
-  justify-items: center;
+  padding: 6vh 3em 18vh;
+  justify-content: center;
   box-shadow: 0 0 30px 50px #{'hsl(var(--clr-dark), .8)'};
 }
 
@@ -11,7 +11,8 @@
   .login-form {
     background: #{'hsl(var(--clr-dark), .8)'};
     width: 100vw;
-    padding: 18vh 2em;
+    padding: 10vh 2em;
+    justify-content: flex-start;
     box-shadow: none;
   }
 }
