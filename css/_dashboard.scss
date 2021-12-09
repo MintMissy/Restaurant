@@ -10,7 +10,7 @@
   padding: 0.5rem 2rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1360px) {
   .grid-container--dashboard {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
@@ -35,7 +35,7 @@
       "marketing"
       "employees"
     ;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
   }
 }
 
@@ -61,6 +61,16 @@
 
 .card--employees {
   grid-area: employees;
+}
+
+@media screen and (max-width: 480px) {
+
+  // Display paragraphs values in new line
+  .card--review span,
+  .card--statistics span,
+  .card--marketing span {
+    display: block;
+  }
 }
 
 // Different spacing cards

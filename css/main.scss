@@ -389,6 +389,12 @@ p>.material-icons {
   --gap: 0.25em;
 }
 
+@media screen and (max-width: 800px) {
+  .card {
+    padding: 1rem 1rem 1.5rem;
+  }
+}
+
 // Highlighted Row
 .highlighted-row {
   justify-content: space-between;

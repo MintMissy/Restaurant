@@ -403,6 +403,12 @@ p > .material-icons {
   --gap: 0.25em;
 }
 
+@media screen and (max-width: 800px) {
+  .card {
+    padding: 1rem 1rem 1.5rem;
+  }
+}
+
 .highlighted-row {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -438,7 +444,7 @@ p > .material-icons {
   padding: 0.5rem 2rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1360px) {
   .grid-container--dashboard {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
@@ -451,7 +457,7 @@ p > .material-icons {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
         grid-template-areas: "review" "review" "orders" "storage" "statistics" "marketing" "employees";
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
   }
 }
 
@@ -496,6 +502,14 @@ p > .material-icons {
   -ms-grid-column: 5;
   -ms-grid-column-span: 2;
   grid-area: employees;
+}
+
+@media screen and (max-width: 480px) {
+  .card--review span,
+  .card--statistics span,
+  .card--marketing span {
+    display: block;
+  }
 }
 
 .card-content--review {
