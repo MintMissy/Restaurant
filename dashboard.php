@@ -32,9 +32,9 @@ $connection = OpenConnection();
       <div class="nav-current-page">Dashboard</div>
       <div class="nav-right flex flow--horizontal letter-spacing-2 fs-500 ff-roboto capitalize">
         <ul class="nav-right__links flex flow--horizontal text-white--shade">
-          <li class="nav-item"><a href="">home</a></li>
-          <li class="nav-item"><a href="">storage</a></li>
-          <li class="nav-item"><a href="">orders</a></li>
+          <li class="nav-item"><a href="dashboard.php">home</a></li>
+          <li class="nav-item"><a href="storage.php">storage</a></li>
+          <li class="nav-item"><a href="orders.php">orders</a></li>
         </ul>
         <a href="index.php" class="btn text-dark ff-roboto capitalize letter-spacing-1 fs-500">
           <span style="margin-top: 3px;">Sign Out</span>

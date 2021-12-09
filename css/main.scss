@@ -10,6 +10,7 @@
   --clr-dark: 180, 20%, 2%;
   --clr-dark--tint: 200, 25%, 5%;
   --clr-gray: 200, 23%, 10%;
+  --clr-light-gray: 200, 23%, 11%;
   --clr-white: 0, 0%, 100%;
   --clr-white--shade: 0, 0%, 85%;
   --clr-error: 4, 100%, 61%;
@@ -77,6 +78,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
+  overflow-x: hidden;
   min-height: 100vh;
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
@@ -126,6 +128,10 @@ a {
   }
 }
 
+th {
+  font-weight: 400;
+}
+
 .material-icons {
   vertical-align: middle;
   font-size: inherit;
@@ -150,6 +156,10 @@ a {
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+}
+
+.grid-container--storage {
+  --gap: 0;
 }
 
 .vertical-center {
@@ -312,6 +322,10 @@ p>.material-icons {
   margin-bottom: 2rem;
 }
 
+.nav--clear-bottom {
+  margin-bottom: 0rem;
+}
+
 .nav-right {
   --gap: 0;
   --flow-space: 2.25rem;
@@ -359,12 +373,32 @@ p>.material-icons {
   background: #{'hsl(var(--clr-primary))'};
 }
 
+.btn--round {
+  border-radius: 3em;
+}
+
+.btn--small {
+  padding: 0.25em 1em;
+}
+
 .btn:hover {
   background: #{'hsl(var(--clr-primary), .9)'};
 }
 
 .btn:focus {
   background: #{'hsl(var(--clr-primary), .7)'};
+}
+
+.btn--light-gray {
+  background: #{'hsl(var(--clr-white), .15)'};
+}
+
+.btn--light-gray:hover {
+  background: #{'hsl(var(--clr-white), .20)'};
+}
+
+.btn--light-gray:focus {
+  background: #{'hsl(var(--clr-white), .25)'};
 }
 
 // Card
@@ -414,6 +448,57 @@ p>.material-icons {
 
 .highlighted-row:hover .highlighted-row__icon {
   display: block !important;
+}
+
+// Filter
+.table-filters {
+  --gap: 1rem;
+  background-color: #{'hsl(var(--clr-gray), .98)'};
+  padding: 0.5rem 0.5rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+// Table
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  background-color: #{'hsl(var(--clr-gray))'};
+  position: relative;
+  width: 100%;
+  border-spacing: 0;
+  overflow: auto;
+}
+
+.table th,
+.table td {
+  padding: .5rem 1rem;
+  white-space: nowrap;
+}
+
+.table th {
+  background: #{'hsl(var(--clr-dark--tint))'} !important;
+}
+
+.table td {
+  border-right: 1px solid #{'hsl(var(--clr-white), .05)'};
+}
+
+.table thead tr {
+  background: #{'hsl(var(--clr-dark--tint))'} !important;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.table tr:nth-child(2n) {
+  background-color: #{'hsl(var(--clr-gray))'};
+}
+
+.table tr:nth-child(2n-1) {
+  background-color: #{'hsl(var(--clr-light-gray))'};
 }
 
 /* ======================== */

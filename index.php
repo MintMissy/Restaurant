@@ -8,6 +8,7 @@
   <title>Login - Restaurant</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/png" href="./img/favicon32x32.png" />
 </head>
 
 <body>
