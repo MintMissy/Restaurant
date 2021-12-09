@@ -21,7 +21,7 @@ function GetGrossedPrice($price)
   return round($price * (1 - $STANDARD_TAX_RATE), 2);
 }
 
-function GetPercentageProportion($firstNumber, $secondNumber)
+function GetProportion($firstNumber, $secondNumber)
 {
-  return round($firstNumber / $secondNumber * 100, 2);
+  return $firstNumber / $secondNumber;
 }

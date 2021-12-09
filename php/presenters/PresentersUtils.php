@@ -1,9 +1,9 @@
 <?php
 require_once './php/Utils/NumberUtils.php';
 
-function PresentSingleMysqliRecord($mysqli_result, $displayFormat = "general")
+function PresentSingleMysqliRecord($mysqliResult, $displayFormat = "general")
 {
-  $record = mysqli_fetch_array($mysqli_result)[0];
+  $record = mysqli_fetch_array($mysqliResult)[0];
 
   switch ($displayFormat) {
     case 'general':
@@ -19,9 +19,9 @@ function PresentSingleMysqliRecord($mysqli_result, $displayFormat = "general")
 }
 
 // Displays grossed price after calling.  
-function PresentSingleMysqliGrossPrice($mysqli_result_net_price, $displayFormat = "general")
+function PresentSingleMysqliGrossPrice($mysqliResultNetPrice, $displayFormat = "general")
 {
-  $record = mysqli_fetch_array($mysqli_result_net_price)[0];
+  $record = mysqli_fetch_array($mysqliResultNetPrice)[0];
   $grossedPrice = GetGrossedPrice($record);
 
   switch ($displayFormat) {
@@ -33,6 +33,26 @@ function PresentSingleMysqliGrossPrice($mysqli_result_net_price, $displayFormat 
       break;
     default:
       echo $grossedPrice;
+      break;
+  }
+}
+
+function PresentSingleMysqliProportion($first_mysqli_result, $second_mysqli_result, $displayFormat = "general")
+{
+  $firstNumber = mysqli_fetch_array($first_mysqli_result)[0];
+  $secondNumber = mysqli_fetch_array($second_mysqli_result)[0];
+
+  $proportion = GetProportion($firstNumber, $secondNumber);
+
+  switch ($displayFormat) {
+    case 'general':
+      echo $proportion;
+      break;
+    case 'rounded percentage':
+      echo round($proportion * 100, 2) . '%';
+      break;
+    default:
+      echo $proportion;
       break;
   }
 }

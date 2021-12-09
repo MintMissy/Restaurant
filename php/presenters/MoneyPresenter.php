@@ -38,7 +38,18 @@ function PresentPreviousWeekNetIncome($connection)
   PresentSingleMysqliRecord($result, 'money');
 }
 
-function PresentLastWeekNetIncomeProportion($connection)
+function PresentCurrentWeekNetIncomeProportion($connection)
 {
-  # code...
+  $resultCurrentWeek = GetCurrentWeekNetIncome($connection);
+  $resultPreviousWeek = GetPreviousWeekNetIncome($connection);
+
+  PresentSingleMysqliProportion($resultCurrentWeek, $resultPreviousWeek, 'rounded percentage');
+}
+
+function PresentCurrentMonthNetIncomeProportion($connection)
+{
+  $resultCurrentMonth = GetCurrentMonthNetIncome($connection);
+  $resultPreviousMonth = GetCurrentMonthNetIncome($connection);
+
+  PresentSingleMysqliProportion($resultCurrentMonth, $resultPreviousMonth, 'rounded percentage');
 }

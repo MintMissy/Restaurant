@@ -115,8 +115,7 @@ $connection = OpenConnection();
               <p class="week-review__content-progress">
                 Proportion:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Proportion to presenter -->
-                  125%
+                  <?php PresentCurrentMonthNetIncomeProportion($connection) ?>
                 </span>
               </p>
             </div>
@@ -180,22 +179,19 @@ $connection = OpenConnection();
               <p class="week-review__content-progress">
                 Previous week (net):
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Weekly net to presenter -->
-                  $1400
+                  <?php PresentPreviousWeekNetIncome($connection) ?>
                 </span>
               </p>
               <p class="week-review__content-progress">
                 Current week (net):
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Weekly net to presenter -->
-                  $1600
+                  <?php PresentCurrentWeekNetIncome($connection) ?>
                 </span>
               </p>
               <p class="week-review__content-progress">
                 Proportion:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Proportion to presenter -->
-                  +25%
+                  <?php PresentCurrentWeekNetIncomeProportion($connection) ?>
                 </span>
               </p>
             </div>
