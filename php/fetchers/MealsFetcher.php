@@ -1,7 +1,7 @@
 <?php
-function GetMostlyBoughtMealFromRange($connection, $min, $max)
+function GetMostlyBoughtMealFromRange($connection, $currentDate, $previousDate)
 {
-    $sqlMostlyBoughMealFromTimeRange = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE o.order_date BETWEEN '$min' AND o.order_date < '$max' GROUP BY m.id ORDER BY SUM(o.quantity) DESC LIMIT 1";
+    $sqlMostlyBoughMealFromTimeRange = "SELECT m.name FROM orders o JOIN meals m ON m.id = o.meal_id WHERE o.order_date > '$previousDate' AND o.order_date < '$currentDate' GROUP BY m.id ORDER BY SUM(o.quantity) DESC LIMIT 1";
     return mysqli_query($connection, $sqlMostlyBoughMealFromTimeRange);
 }
 

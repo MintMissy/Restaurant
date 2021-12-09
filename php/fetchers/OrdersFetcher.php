@@ -1,9 +1,9 @@
 <?php
 require_once "./php/Utils/DateUtils.php";
 
-function GetOrdersAmountFromRange($connection, $min, $max)
+function GetOrdersAmountFromRange($connection, $currentDate, $previousDate)
 {
-    $sqlOrdersAmountFromRange = "SELECT COUNT(*) AS 'orders_amount' FROM orders WHERE order_date BETWEEN '$min' AND '$max'";
+    $sqlOrdersAmountFromRange = "SELECT COUNT(*) AS 'orders_amount' FROM orders WHERE order_date BETWEEN '$previousDate' AND '$currentDate'";
     return mysqli_query($connection, $sqlOrdersAmountFromRange);
 }
 

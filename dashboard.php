@@ -7,6 +7,7 @@ require_once 'php/presenters/DatesPresenter.php';
 require_once 'php/presenters/EmployeesPresenter.php';
 require_once 'php/presenters/ClientsPresenter.php';
 require_once 'php/presenters/MealsPresenter.php';
+require_once 'php/presenters/MoneyPresenter.php';
 
 $connection = OpenConnection();
 ?>
@@ -84,15 +85,13 @@ $connection = OpenConnection();
               <p>
                 Gross:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Monthly gross to presenter -->
-                  $14.00
+                  <?php PresentCurrentMonthGrossIncome($connection) ?>
                 </span>
               </p>
               <p>
                 Net:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Monthly net to presenter -->
-                  $14.00
+                  <?php PresentCurrentMonthNetIncome($connection) ?>
                 </span>
               </p>
             </div>
@@ -165,15 +164,13 @@ $connection = OpenConnection();
               <p>
                 Gross:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Weekly gross to presenter -->
-                  $14.00
+                  <?php PresentCurrentWeekGrossIncome($connection) ?>
                 </span>
               </p>
               <p>
                 Net:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Weekly net to presenter -->
-                  $14.00
+                  <?php PresentCurrentWeekNetIncome($connection) ?>
                 </span>
               </p>
             </div>

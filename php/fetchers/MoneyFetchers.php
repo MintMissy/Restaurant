@@ -1,18 +1,6 @@
 <?php
-function GetGross($connection, $start_date, $end_date)
+function GetNetIncomeFromRange($connection, $currentDate, $previousDate)
 {
-    $sqlGross = "";
-    return;
-}
-
-function GetNet($connection, $start_date, $end_date, $tax_percentage)
-{
-    $sqlNet = "";
-    return;
-}
-
-function GetRevenueProportion($connection, $start_date, $end_date)
-{
-    $sqlRevenueProportion = "";
-    return;
+    $sqlNetIncomeFromRange = "SELECT SUM(o.quantity * m.cost_net) AS net_income FROM orders o JOIN meals m ON m.id = o.meal_id WHERE o.order_date < '$currentDate' AND o.order_date > '$previousDate'";
+    return mysqli_query($connection, $sqlNetIncomeFromRange);
 }

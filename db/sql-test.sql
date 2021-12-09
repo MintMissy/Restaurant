@@ -4,8 +4,8 @@ FROM
   orders o
   JOIN meals m ON m.id = o.meal_id
 WHERE
-  o.order_date BETWEEN '2021-12-25 00:00:00'
-  AND o.order_date < '2021-12-1 00:00:00'
+  o.order_date > '2021-12-09 18:04:16'
+  AND o.order_date < '2021-11-11 18:04:16'
 GROUP BY
   m.id
 ORDER BY
