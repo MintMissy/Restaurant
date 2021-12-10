@@ -44,7 +44,7 @@ $connection = OpenConnection();
   </header>
 
   <main>
-    <div class="grid grid-container--dashboard">
+    <div class="grid grid-container grid-container--dashboard">
       <!-- Review Card -->
       <div class="card card--review flow">
         <!-- Monthly Review -->
