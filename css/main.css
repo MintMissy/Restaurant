@@ -127,9 +127,41 @@ th {
   font-weight: 400;
 }
 
+[hidden] {
+  display: none;
+}
+
 .material-icons {
   vertical-align: middle;
   font-size: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--clr-light-gray));
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--clr-light-gray));
+    border-radius: 2px;
+  }
 }
 
 /* ======================== */
@@ -161,8 +193,6 @@ th {
 
 .grid-container--storage {
   --gap: 0;
-  max-height: 85vh;
-  overflow-y: hidden;
 }
 
 .vertical-center {
@@ -426,7 +456,7 @@ p > .material-icons {
 
 .card {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   --flow-space: 2rem;
   border-radius: 0.5rem;
   background: hsl(var(--clr-dark--tint), .98);
@@ -486,20 +516,32 @@ p > .material-icons {
   white-space: nowrap;
 }
 
+@media screen and (max-width: 769px) {
+  .table-filters {
+    margin-bottom: 0.25em;
+  }
+}
+
 .table-container {
   width: 100%;
-  overflow-x: auto;
+  max-height: 75vh;
+  overflow: auto;
 }
 
 .table {
-  position: relative;
-  width: 100%;
   overflow: auto;
   border-spacing: 0 .5rem;
 }
 
 .table thead th {
   text-transform: capitalize;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -2px;
+}
+
+.table th {
+  background: hsl(var(--clr-dark--tint), 1);
 }
 
 .table th,
@@ -508,28 +550,22 @@ p > .material-icons {
   text-align: center;
 }
 
-@media screen and (max-width: 800px) {
-  .table thead th:not(:first-child):not(:last-child) {
-    padding-inline: 1rem;
-  }
-  .table thead th:first-child {
-    padding-right: 1rem;
-  }
-  .table thead th:last-child {
-    padding-left: 1rem;
-  }
+.table thead th {
+  padding-inline: 1rem;
 }
 
 .table tr:hover td {
   background: hsl(var(--clr-gray));
 }
 
-.table tr:hover td:first-child {
+.table tr:hover td:first-child,
+.table tr th:first-child {
   border-start-start-radius: 0.25em;
   border-end-start-radius: 0.25em;
 }
 
-.table tr:hover td:last-child {
+.table tr:hover td:last-child,
+.table tr th:last-child {
   border-start-end-radius: 0.25em;
   border-end-end-radius: 0.25em;
 }

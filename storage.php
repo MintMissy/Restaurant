@@ -1,5 +1,6 @@
 <?php
 require_once './php/DatabaseConnector.php';
+require_once './php/presenters/StoragePresenter.php';
 
 $connection = OpenConnection();
 ?>
@@ -11,10 +12,11 @@ $connection = OpenConnection();
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Restaurant</title>
+  <title>Storage - Restaurant</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="icon" type="image/png" href="./img/favicon32x32.png" />
+  <script src="js/filters.js" defer></script>
 </head>
 
 <body>
@@ -38,10 +40,10 @@ $connection = OpenConnection();
   <main>
     <div class="grid grid-container grid-container--storage">
       <div class="card">
-        <div class="table-filters flex">
-          <div class="btn btn--round btn--small btn--light-gray">All</div>
-          <div class="btn btn--round btn--small btn--light-gray">Nearly Depleted</div>
-          <div class="btn btn--round btn--small btn--light-gray">Missing</div>
+        <div class="table-filters flex" role="filters-list" aria-label="filters-list">
+          <div aria-selected="true" role="filter" aria-controls="all-table-data" class="btn btn--round text-dark btn--small">All</div>
+          <div aria-selected="true" role="filter" aria-controls="nearly-depleted-table-data" class="btn btn--round btn--small btn--light-gray">Nearly Depleted</div>
+          <div aria-selected="true" role="filter" aria-controls="missing-table-data" class="btn btn--round btn--small btn--light-gray">Missing</div>
         </div>
         <div class="table-container">
           <table class="table tableFixHead">
@@ -54,15 +56,14 @@ $connection = OpenConnection();
                 <th>recommended amount</th>
               </tr>
             </thead>
-            <tbody class="text-white--shade ff-roboto">
-              <tr>
-                <td>1</td>
-                <td>egg</td>
-                <td>12</td>
-                <td>kg</td>
-                <td>6</td>
-              </tr>
-              <?php ?>
+            <tbody class="text-white--shade ff-roboto" id="all-table-data" role="table-data">
+              <?php PresentIngredientsAllBlock($connection) ?>
+            </tbody>
+            <tbody hidden class="text-white--shade ff-roboto" id="nearly-depleted-table-data" role="table-data">
+              <?php PresentIngredientsNearlyDepletedBlock($connection) ?>
+            </tbody>
+            <tbody hidden class="text-white--shade ff-roboto" id="missing-table-data" role="table-data">
+              <?php PresentIngredientsMissingBlock($connection) ?>
             </tbody>
           </table>
         </div>
