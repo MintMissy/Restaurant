@@ -149,7 +149,6 @@ $connection = OpenConnection();
               <p>
                 Food of the Week:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
-                  <!-- TODO Food of the week to presenter -->
                   <?php PresentFoodOfTheWeek($connection) ?>
                 </span>
               </p>
@@ -246,7 +245,7 @@ $connection = OpenConnection();
         </h1>
         <div class="card-content card-content--orders flex-column">
           <!-- View Products -->
-          <a href="" class="highlighted-row flex fs-500">
+          <a href="storage.php?filter=all#tableContainer" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">archive</i>
               View Products
@@ -254,7 +253,7 @@ $connection = OpenConnection();
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Warning Products -->
-          <a href="" class="highlighted-row flex fs-500">
+          <a href="storage.php?filter=nearlyDepleted#tableContainer" class="highlighted-row flex fs-500">
             <p class="text-warning">
               <i class="material-icons">report_problem</i>
               <?php PresentIngredientsNearlyDepletedAmount($connection) ?> Ingredients Nearly Depleted
@@ -262,7 +261,7 @@ $connection = OpenConnection();
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Error Products -->
-          <a href="" div class="highlighted-row flex fs-500">
+          <a href="storage.php?filter=missing#tableContainer" div class="highlighted-row flex fs-500">
             <p class="text-error">
               <i class="material-icons">error</i>
               <?php PresentIngredientsMissingAmount($connection) ?> Ingredients Missing

@@ -16,7 +16,6 @@ $connection = OpenConnection();
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="icon" type="image/png" href="./img/favicon32x32.png" />
-  <script src="js/filters.js" defer></script>
 </head>
 
 <body>
@@ -40,12 +39,34 @@ $connection = OpenConnection();
   <main>
     <div class="grid grid-container grid-container--storage">
       <div class="card">
+        <?php
+        function GetSelectedFilter()
+        {
+          switch ($_GET['filter']) {
+            case 'all':
+              return 'all';
+            case 'nearlyDepleted':
+              return 'nearlyDepleted';
+            case 'missing':
+              return 'missing';
+            default:
+              return 'all';
+          }
+        }
+
+        $selectedBtnClasses = "btn btn--round text-dark btn--small";
+        $unselectedBtnClasses = "btn btn--round btn--small btn--light-gray";
+
+        $selectedFilter = GetSelectedFilter()
+        ?>
+
         <div class="table-filters flex" role="filters-list" aria-label="filters-list">
-          <div aria-selected="true" role="filter" aria-controls="all-table-data" class="btn btn--round text-dark btn--small">All</div>
-          <div aria-selected="true" role="filter" aria-controls="nearly-depleted-table-data" class="btn btn--round btn--small btn--light-gray">Nearly Depleted</div>
-          <div aria-selected="true" role="filter" aria-controls="missing-table-data" class="btn btn--round btn--small btn--light-gray">Missing</div>
+          <a href="storage.php?filter=all#tableContainer" class="<?php echo $selectedFilter == 'all' ? $selectedBtnClasses : $unselectedBtnClasses ?>">All</a>
+          <a href="storage.php?filter=nearlyDepleted#tableContainer" class="<?php echo $selectedFilter == 'nearlyDepleted' ? $selectedBtnClasses : $unselectedBtnClasses ?>">Nearly Depleted</a>
+          <a href="storage.php?filter=missing#tableContainer" class="<?php echo $selectedFilter == 'missing' ? $selectedBtnClasses : $unselectedBtnClasses ?>">Missing</a>
         </div>
-        <div class="table-container">
+
+        <div id="tableContainer" class="table-container">
           <table class="table tableFixHead">
             <thead class="fs-500 text-primary">
               <tr>
@@ -56,14 +77,10 @@ $connection = OpenConnection();
                 <th>recommended amount</th>
               </tr>
             </thead>
-            <tbody class="text-white--shade ff-roboto" id="all-table-data" role="table-data">
-              <?php PresentIngredientsAllBlock($connection) ?>
-            </tbody>
-            <tbody hidden class="text-white--shade ff-roboto" id="nearly-depleted-table-data" role="table-data">
-              <?php PresentIngredientsNearlyDepletedBlock($connection) ?>
-            </tbody>
-            <tbody hidden class="text-white--shade ff-roboto" id="missing-table-data" role="table-data">
-              <?php PresentIngredientsMissingBlock($connection) ?>
+            <tbody class="text-white--shade ff-roboto">
+              <?php echo $selectedFilter == 'all' ? PresentIngredientsAllBlock($connection) : '' ?>
+              <?php echo $selectedFilter == 'nearlyDepleted' ? PresentIngredientsNearlyDepletedBlock($connection) : '' ?>
+              <?php echo $selectedFilter == 'missing' ? PresentIngredientsMissingBlock($connection) : '' ?>
             </tbody>
           </table>
         </div>

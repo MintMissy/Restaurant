@@ -524,6 +524,7 @@ p > .material-icons {
 
 .table-container {
   width: 100%;
+  height: 75vh;
   max-height: 75vh;
   overflow: auto;
 }

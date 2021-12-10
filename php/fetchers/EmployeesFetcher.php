@@ -6,12 +6,6 @@ function GetCurrentlyWorkingEmployees($connection)
     return mysqli_query($connection, $sqlCurrentlyWorkingEmployees);
 }
 
-function GetEmployeesAfterWork($connection)
-{
-    $sqlEmployeesAfterWork = "";
-    return;
-}
-
 function GetEmployeesWithLessLeftDaysOff($connection, $leftDaysOffAmount)
 {
     $sqlEmployeesWithLessDaysOff = "SELECT * FROM `clients` WHERE left_days_off < $leftDaysOffAmount";
