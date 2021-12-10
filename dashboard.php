@@ -206,7 +206,7 @@ $connection = OpenConnection();
         </h1>
         <div class="card-content card-content--orders flex-column">
           <!-- Pending -->
-          <a href="" class="highlighted-row flex fs-500">
+          <a href="orders.php?filter=pending#tableContainer" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">pending_actions</i>
               Pending: <span class="card-content-value text-white--shade ff-roboto">
@@ -216,7 +216,7 @@ $connection = OpenConnection();
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Shipped -->
-          <a href="" class="highlighted-row flex fs-500">
+          <a href="orders.php?filter=shipped#tableContainer" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">directions_car</i>
               Shipped: <span class="card-content-value text-white--shade ff-roboto">
@@ -226,7 +226,7 @@ $connection = OpenConnection();
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
           <!-- Realized -->
-          <a href="" class="highlighted-row flex fs-500">
+          <a href="orders.php?filter=lastRealized50#tableContainer" class="highlighted-row flex fs-500">
             <p>
               <i class="material-icons text-primary--tint">task_alt</i>
               Realized: <span class="card-content-value text-white--shade ff-roboto">

@@ -9,20 +9,20 @@ function GetOrdersAmountFromRange($connection, $currentDate, $previousDate)
 
 function GetPendingOrders($connection)
 {
-    $sqlPendingOrders = "SELECT * FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go' )";
+    $sqlPendingOrders = "SELECT * FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go') ORDER BY order_date DESC";
     return mysqli_query($connection, $sqlPendingOrders);
 }
 
 function GetPendingOrdersAmount($connection)
 {
-    $sqlPendingOrdersAmount = "SELECT count(id) FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go' )";
+    $sqlPendingOrdersAmount = "SELECT count(id) FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go')";
     return mysqli_query($connection, $sqlPendingOrdersAmount);;
 }
 
 // Get shipped but not realized orders
 function GetShippedOrders($connection)
 {
-    $sqlShippedOrders = "SELECT * FROM orders WHERE shipment_date <> '0000-00-00 00:00:00' AND pickup_date = '0000-00-00 00:00:00' AND order_type = 'To go'";
+    $sqlShippedOrders = "SELECT * FROM orders WHERE shipment_date <> '0000-00-00 00:00:00' AND pickup_date = '0000-00-00 00:00:00' AND order_type = 'To go' ORDER BY shipment_date DESC";
     return mysqli_query($connection, $sqlShippedOrders);
 }
 
@@ -32,9 +32,9 @@ function GetShippedOrdersAmount($connection)
     return mysqli_query($connection, $sqlShippedOrdersAmount);
 }
 
-function GetRealizedOrders($connection)
+function GetRealizedOrders($connection, $limit)
 {
-    $sqlRealizedOrders = "SELECT * FROM `orders` WHERE pickup_date <> 0000-00-00 00:00:00";
+    $sqlRealizedOrders = "SELECT * FROM `orders` WHERE pickup_date <> '0000-00-00 00:00:00' LIMIT $limit";
     return mysqli_query($connection, $sqlRealizedOrders);
 }
 

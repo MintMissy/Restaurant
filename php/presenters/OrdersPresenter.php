@@ -105,3 +105,49 @@ function PresentLastWeekOrderAmount($connection)
   $result = GetOrdersAmountFromRange($connection, $currentDate, $weekAgoDate);
   PresentSingleMysqliRecord($result);
 }
+
+function PresentOrdersPendingBlock($connection)
+{
+  $result = GetPendingOrders($connection);
+  GenerateOrdersBlock($result);
+}
+
+function PresentOrdersShippedBlock($connection)
+{
+  $result = GetShippedOrders($connection);
+  GenerateOrdersBlock($result);
+}
+
+function PresentOrdersRealizedBlock($connection, $recordLimit)
+{
+  $result = GetRealizedOrders($connection, $recordLimit);
+  GenerateOrdersBlock($result);
+}
+
+function GetFormattedCellDate($date)
+{
+  if ($date == '0000-00-00 00:00:00') {
+    return '';
+  }
+  return $date;
+}
+
+function GenerateOrdersBlock($result)
+{
+  while ($row = mysqli_fetch_array($result)) {
+    echo "
+    <tr>
+      <td>" . $row['id'] . "</td>
+      <td>" . $row['client_id'] . "</td>
+      <td>" . $row['meal_id'] . "</td>
+      <td>" . $row['quantity'] . "</td>
+      <td>" . $row['delivery_place'] . "</td>
+      <td>" . $row['delivery_postcode'] . "</td>
+      <td>" . GetFormattedCellDate($row['order_date']) . "</td>
+      <td>" . GetFormattedCellDate($row['shipment_date']) . "</td>
+      <td>" . GetFormattedCellDate($row['pickup_date']) . "</td>
+      <td>" . $row['order_type'] . "</td>
+    <tr/>
+    ";
+  }
+}
