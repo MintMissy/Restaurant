@@ -530,8 +530,10 @@ p > .material-icons {
 }
 
 .table {
+  width: 1500px;
   overflow: auto;
   border-spacing: 0 .5rem;
+  table-layout: fixed;
 }
 
 .table thead th {
@@ -744,5 +746,45 @@ p > .material-icons {
   --flow-space: 3rem;
   width: 75%;
   margin-inline: auto;
+}
+
+.column-orders--id {
+  width: 1em;
+}
+
+.column-orders--client {
+  width: 3em;
+}
+
+.column-orders--meal {
+  width: 3em;
+}
+
+.column-orders--quantity {
+  width: 1em;
+}
+
+.column-orders--dlvr-place {
+  width: 4em;
+}
+
+.column-orders--dlvr-postcode {
+  width: 3em;
+}
+
+.column-orders--order-date {
+  width: 2.5em;
+}
+
+.column-orders--shipment-date {
+  width: 2.5em;
+}
+
+.column-orders--pickup-date {
+  width: 2.5em;
+}
+
+.column-orders--order-type {
+  width: 2em;
 }
 /*# sourceMappingURL=main.css.map */

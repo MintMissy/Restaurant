@@ -9,7 +9,7 @@ function GetOrdersAmountFromRange($connection, $currentDate, $previousDate)
 
 function GetPendingOrders($connection)
 {
-    $sqlPendingOrders = "SELECT * FROM orders WHERE ( pickup_date = '0000-00-00 00:00:00' AND order_type = 'Stationary' ) OR ( shipment_date = '0000-00-00 00:00:00' AND order_type = 'To go') ORDER BY order_date DESC";
+    $sqlPendingOrders = "SELECT o.id, CONCAT(c.name, ' ', c.surname) AS 'client', m.name AS 'meal', o.quantity, o.delivery_place, o.delivery_postcode, o.order_date, o.shipment_date, o.pickup_date, o.order_type FROM orders o JOIN clients c on o.client_id = c.id JOIN meals m on o.meal_id = m.id WHERE ( o.pickup_date = '0000-00-00 00:00:00' AND o.order_type = 'Stationary' ) OR ( o.shipment_date = '0000-00-00 00:00:00' AND o.order_type = 'To go' ) ORDER BY o.order_date DESC";
     return mysqli_query($connection, $sqlPendingOrders);
 }
 
@@ -22,7 +22,7 @@ function GetPendingOrdersAmount($connection)
 // Get shipped but not realized orders
 function GetShippedOrders($connection)
 {
-    $sqlShippedOrders = "SELECT * FROM orders WHERE shipment_date <> '0000-00-00 00:00:00' AND pickup_date = '0000-00-00 00:00:00' AND order_type = 'To go' ORDER BY shipment_date DESC";
+    $sqlShippedOrders = "SELECT o.id, CONCAT(c.name, ' ', c.surname) AS 'client', m.name AS 'meal', o.quantity, o.delivery_place, o.delivery_postcode, o.order_date, o.shipment_date, o.pickup_date, o.order_type FROM orders o JOIN clients c on o.client_id = c.id JOIN meals m on o.meal_id = m.id WHERE o.shipment_date <> '0000-00-00 00:00:00' AND o.pickup_date = '0000-00-00 00:00:00' AND o.order_type = 'To go' ORDER BY o.shipment_date DESC";
     return mysqli_query($connection, $sqlShippedOrders);
 }
 
@@ -34,7 +34,7 @@ function GetShippedOrdersAmount($connection)
 
 function GetRealizedOrders($connection, $limit)
 {
-    $sqlRealizedOrders = "SELECT * FROM `orders` WHERE pickup_date <> '0000-00-00 00:00:00' LIMIT $limit";
+    $sqlRealizedOrders = "SELECT o.id, CONCAT(c.name, ' ', c.surname) AS 'client', m.name AS 'meal', o.quantity, o.delivery_place, o.delivery_postcode, o.order_date, o.shipment_date, o.pickup_date, o.order_type FROM orders o JOIN clients c on o.client_id = c.id JOIN meals m on o.meal_id = m.id WHERE o.pickup_date <> '0000-00-00 00:00:00' ORDER BY o.order_date DESC LIMIT $limit";
     return mysqli_query($connection, $sqlRealizedOrders);
 }
 

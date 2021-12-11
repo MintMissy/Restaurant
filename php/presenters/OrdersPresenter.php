@@ -124,12 +124,40 @@ function PresentOrdersRealizedBlock($connection, $recordLimit)
   GenerateOrdersBlock($result);
 }
 
+function ConvertSpaceToNewLine($string)
+{
+  return str_replace(' ', '<br/>', $string);
+}
+
 function GetFormattedCellDate($date)
 {
   if ($date == '0000-00-00 00:00:00') {
     return '';
   }
-  return $date;
+  return ConvertSpaceToNewLine($date);
+}
+
+function GetFormattedDeliveryPlace($deliveryPlace)
+{
+  $secondCommaPosition = 0;
+  $commaCounter = 0;
+
+  // Get second comma position
+  for ($i = 0; $i < strlen($deliveryPlace); $i++) {
+    if ($deliveryPlace[$i] != ',') {
+      continue;
+    }
+
+    if ($commaCounter == 1) {
+      $secondCommaPosition = $i;
+      break;
+    }
+    $commaCounter++;
+  }
+
+  $mainLocation = substr($deliveryPlace, 0, $secondCommaPosition);
+  $streetAddress = substr($deliveryPlace, $secondCommaPosition + 1, strlen($deliveryPlace));
+  return $mainLocation . '<br/>' . $streetAddress;
 }
 
 function GenerateOrdersBlock($result)
@@ -138,10 +166,10 @@ function GenerateOrdersBlock($result)
     echo "
     <tr>
       <td>" . $row['id'] . "</td>
-      <td>" . $row['client_id'] . "</td>
-      <td>" . $row['meal_id'] . "</td>
+      <td>" . ConvertSpaceToNewLine($row['client']) . "</td>
+      <td>" . $row['meal'] . "</td>
       <td>" . $row['quantity'] . "</td>
-      <td>" . $row['delivery_place'] . "</td>
+      <td>" . GetFormattedDeliveryPlace($row['delivery_place']) . "</td>
       <td>" . $row['delivery_postcode'] . "</td>
       <td>" . GetFormattedCellDate($row['order_date']) . "</td>
       <td>" . GetFormattedCellDate($row['shipment_date']) . "</td>

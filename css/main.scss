@@ -518,8 +518,10 @@ p>.material-icons {
 }
 
 .table {
+  width: 1500px;
   overflow: auto;
   border-spacing: 0 .5rem;
+  table-layout: fixed;
 }
 
 .table thead th {
@@ -569,3 +571,4 @@ $onHoverRadius: .25em;
 /* ======================== */
 @import "_dashboard.scss";
 @import "_login.scss";
+@import "_table-columns-sizes.scss";

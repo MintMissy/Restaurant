@@ -73,16 +73,16 @@ $connection = OpenConnection();
           <table class="table tableFixHead">
             <thead class="fs-500 text-primary">
               <tr>
-                <th>id</th>
-                <th>client id</th>
-                <th>meal id</th>
-                <th>quantity</th>
-                <th>dlvr place</th>
-                <th>dlvr postcode</th>
-                <th>order date </th>
-                <th>shipment date</th>
-                <th>pickup date</th>
-                <th>order type</th>
+                <th class="column-orders--id">id</th>
+                <th class="column-orders--client">client</th>
+                <th class="column-orders--meal">meal</th>
+                <th class="column-orders--quantity">quantity</th>
+                <th class="column-orders--dlvr-place">dlvr place</th>
+                <th class="column-orders--dlvr-postcode">dlvr postcode</th>
+                <th class="column-orders--order-date">order date </th>
+                <th class="column-orders--shipment-date">shipment date</th>
+                <th class="column-orders--pickup-date">pickup date</th>
+                <th class="column-orders--order-type">order type</th>
               </tr>
             </thead>
             <tbody class="text-white--shade ff-roboto">
