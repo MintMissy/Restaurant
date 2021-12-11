@@ -1,42 +1,73 @@
-// Storage
+// Orders
 .column-orders--id {
-  width: 1em;
+  min-width: 4em;
 }
 
 .column-orders--client {
-  width: 3em;
+  min-width: 8em;
 }
 
 .column-orders--meal {
-  width: 3em;
+  min-width: 7em;
 }
 
 .column-orders--quantity {
-  width: 1em;
+  min-width: 6em;
 }
 
 .column-orders--dlvr-place {
-  width: 4em;
+  min-width: 10em;
 }
 
 .column-orders--dlvr-postcode {
-  width: 3em;
+  min-width: 8em;
 }
 
 .column-orders--order-date {
-  width: 2.5em;
+  min-width: 7em;
 }
 
 .column-orders--shipment-date {
-  width: 2.5em;
+  min-width: 8em;
 }
 
 .column-orders--pickup-date {
-  width: 2.5em;
+  min-width: 7em;
 }
 
 .column-orders--order-type {
-  width: 2em;
+  min-width: 6em;
 }
 
-// Orders
+@media screen and (max-width: 1279px) {
+  .column-orders--dlvr-postcode {
+    min-width: 4em;
+  }
+}
+
+// Storage
+.column-storage--id {
+  min-width: 4em;
+}
+
+.column-storage--item-name {
+  min-width: 10em;
+}
+
+.column-storage--quantity {
+  min-width: 6em;
+}
+
+.column-storage--unit {
+  min-width: 4em;
+}
+
+.column-storage--recommended-amount {
+  min-width: 12em;
+}
+
+@media screen and (max-width: 1279px) {
+  .column-storage--recommended-amount {
+    min-width: 8em;
+  }
+}

@@ -85,8 +85,8 @@
 @media screen and (max-width: 480px) {
   .card-content {
     --gap: 1rem 0;
-    justify-items: baseline;
     align-items: baseline;
+    justify-items: baseline;
   }
 
   .card-content--review {

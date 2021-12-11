@@ -1,18 +1,18 @@
 .login-form {
+  justify-content: center;
   background: #{'hsl(var(--clr-dark), .8)'};
   height: 100vh;
   width: 23em;
   padding: 6vh 3em 18vh;
-  justify-content: center;
   box-shadow: 0 0 30px 50px #{'hsl(var(--clr-dark), .8)'};
 }
 
 @media screen and (max-width: 680px) {
   .login-form {
+    justify-content: flex-start;
     background: #{'hsl(var(--clr-dark), .8)'};
     width: 100vw;
     padding: 10vh 2em;
-    justify-content: flex-start;
     box-shadow: none;
   }
 }

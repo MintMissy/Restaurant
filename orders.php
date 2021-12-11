@@ -42,6 +42,10 @@ $connection = OpenConnection();
         <?php
         function GetSelectedFilter()
         {
+          if (!isset($_GET['filter'])) {
+            return 'lastRealized50';
+          }
+
           switch ($_GET['filter']) {
             case 'pending':
               return 'pending';

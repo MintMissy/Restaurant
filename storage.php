@@ -42,6 +42,10 @@ $connection = OpenConnection();
         <?php
         function GetSelectedFilter()
         {
+          if (!isset($_GET['filter'])) {
+            return 'all';
+          }
+
           switch ($_GET['filter']) {
             case 'all':
               return 'all';
@@ -70,11 +74,11 @@ $connection = OpenConnection();
           <table class="table tableFixHead">
             <thead class="fs-500 text-primary">
               <tr>
-                <th>id</th>
-                <th>item name</th>
-                <th>quantity</th>
-                <th>unit</th>
-                <th>recommended amount</th>
+                <th class="column-storage--id">id</th>
+                <th class="column-storage--item-name">item name</th>
+                <th class="column-storage--quantity">quantity</th>
+                <th class="column-storage--unit">unit</th>
+                <th class="column-storage--recommended-amount">recommended amount</th>
               </tr>
             </thead>
             <tbody class="text-white--shade ff-roboto">
