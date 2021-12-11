@@ -378,7 +378,7 @@ VALUES
   ),
   (
     'Harper',
-    'LeePerezThompsonWhiteHarrisSanchezClarkRamirezLewisRobinson',
+    'ThompsonzLewisRobinson',
     'female',
     'London, Portsoken, Harrow Place 41',
     'E17DB',
@@ -842,7 +842,7 @@ VALUES
   ),
   (
     'Benjamin',
-    'LeePerezThompsonWhiteHarrisSanchezClarkRamirezLewisRobinson',
+    'ThompsonzLewisRobinson',
     'male',
     'London, Portsoken, Middlesex Street 16',
     'E17DA',
