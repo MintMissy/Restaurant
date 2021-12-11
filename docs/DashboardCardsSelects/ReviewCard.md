@@ -32,6 +32,8 @@ LIMIT
 ### Get income from range ...
 
 SELECT
+
+```
 SUM(o.quantity \* m.cost_net) AS net_income
 FROM
 orders o
@@ -39,3 +41,4 @@ JOIN meals m ON m.id = o.meal_id
 WHERE
 o.order_date < '$currentDate'
   AND o.order_date > '$previousDate'
+```
