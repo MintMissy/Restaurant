@@ -72,7 +72,7 @@ $connection = OpenConnection();
                 </span>
               </p>
               <p>
-                Food of the Month:
+                Meal of the Month:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
                   <?php PresentFoodOfTheMonth($connection) ?>
                 </span>
@@ -147,7 +147,7 @@ $connection = OpenConnection();
                 </span>
               </p>
               <p>
-                Food of the Week:
+                Meal of the Week:
                 <span class="card-content-value text-white--shade ff-roboto fs-300">
                   <?php PresentFoodOfTheWeek($connection) ?>
                 </span>
@@ -256,7 +256,7 @@ $connection = OpenConnection();
           <a href="storage.php?filter=nearlyDepleted#tableContainer" class="highlighted-row flex fs-500">
             <p class="text-warning">
               <i class="material-icons">report_problem</i>
-              <?php PresentIngredientsNearlyDepletedAmount($connection) ?> Ingredients Nearly Depleted
+              <?php PresentIngredientsNearlyDepletedAmount($connection) ?> Ingredients are Nearly Depleted
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -264,7 +264,7 @@ $connection = OpenConnection();
           <a href="storage.php?filter=missing#tableContainer" div class="highlighted-row flex fs-500">
             <p class="text-error">
               <i class="material-icons">error</i>
-              <?php PresentIngredientsMissingAmount($connection) ?> Ingredients Missing
+              <?php PresentIngredientsMissingAmount($connection) ?> Ingredients are Missing
             </p>
             <i class="material-icons highlighted-row__icon text-primary--tint">visibility</i>
           </a>
@@ -391,7 +391,7 @@ $connection = OpenConnection();
           </p>
           <p>
             <i class="material-icons">star</i>
-            Least bough meal:
+            Least bought meal:
             <span class="card-content-value text-white--shade ff-roboto fs-300">
               <?php PresentLeastBoughtMeal($connection) ?>
             </span>
