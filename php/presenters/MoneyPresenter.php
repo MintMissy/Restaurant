@@ -49,7 +49,7 @@ function PresentCurrentWeekNetIncomeProportion($connection)
 function PresentCurrentMonthNetIncomeProportion($connection)
 {
   $resultCurrentMonth = GetCurrentMonthNetIncome($connection);
-  $resultPreviousMonth = GetCurrentMonthNetIncome($connection);
+  $resultPreviousMonth = GetPreviousMonthNetIncome($connection);
 
   PresentSingleMysqliProportion($resultCurrentMonth, $resultPreviousMonth, 'rounded percentage');
 }
